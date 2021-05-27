@@ -1,2 +1,7 @@
 *.idea/
+<<<<<<< HEAD
 /bin/
+=======
+src/.classpath
+src/.project
+>>>>>>> eef137750acfecd787a4869d7f285983ce147572
