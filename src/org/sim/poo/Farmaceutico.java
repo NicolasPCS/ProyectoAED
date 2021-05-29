@@ -1,7 +1,7 @@
 package org.sim.poo;
 import java.util.Scanner;
 
-public class Farmaceutico {
+public class Farmaceutico extends Persona {
 	
 	private int codigo;
 	private String Farmacia;

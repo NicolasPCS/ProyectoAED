@@ -1,6 +1,7 @@
 package org.sim.poo;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Farmacia {
     private int idFarmacia = 0;
@@ -8,6 +9,8 @@ public class Farmacia {
     private boolean disponible;
     private Date horarioAtencion;
     private String telefono;
+    
+    
 
     public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
         this.idFarmacia += 1;
@@ -18,10 +21,43 @@ public class Farmacia {
     }
 
     public void verHorario() {
+    	
+    	int opc = 0;
+    	
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Escoje una opcion");
+		System.out.println("-------------------------");
+		System.out.println("1. Turno Mañana");
+		System.out.println("2. Turno Tarde");
+		System.out.println("3. Turno Noche");
+		System.out.println("4. Salir");
+		
+		opc = in.nextInt();
+    	
+    	switch (opc) {
+    	case 1:
+    		System.out.println("7:00 am a 12 am");
+    		break;
+    	case 2:
+    		System.out.println("2:00 pm a 4:00 pm");
+    		break;
+    	case 3:
+    		System.out.println("6:00 pm a 8:00 pm");
+    		break;
+    	case 4:
+    		break;
+    	 	
+    	
+    	}
+    	
+    	
 
     }
 
     public void listarProductos() {
+    	
+    	
 
     }
 
