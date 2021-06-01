@@ -1,6 +1,6 @@
-package org.sim;
+package org.sim.elineales.Listas;
 
-public class ListLinked <T> implements TDAList <T> {
+public class ListLinked <T> implements TDAList<T> {
 	private Node <T> first;
 	private int count;
 	
@@ -69,9 +69,7 @@ public class ListLinked <T> implements TDAList <T> {
             }else if(current != null)
                 previous.setNext(current.getNext());
         }
-
         count--;
-		
 	}
 	
 	public int ocurrencias(T x) {
@@ -80,7 +78,6 @@ public class ListLinked <T> implements TDAList <T> {
 			if(aux.getData().equals(x))
 				return i;
 		return -1;
-		
 	}
 	
 	public String toString() {
