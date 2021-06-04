@@ -26,7 +26,6 @@ public class Carrito implements TipodePago{
 
 	@Override
 	public boolean transferenciaBancaria() {
-		// TODO Auto-generated method stub
 		
 		return true;
 		
@@ -34,7 +33,6 @@ public class Carrito implements TipodePago{
 
 	@Override
 	public boolean tarjetaCredito() {
-		// TODO Auto-generated method stub
 		
 		return true;
 		
@@ -42,7 +40,6 @@ public class Carrito implements TipodePago{
 
 	@Override
 	public boolean generarFactura() {
-		// TODO Auto-generated method stub
 		
 		return true;
 		
