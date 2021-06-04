@@ -9,8 +9,6 @@ public class Farmacia {
     private boolean disponible;
     private Date horarioAtencion;
     private String telefono;
-    
-    
 
     public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
         this.idFarmacia += 1;

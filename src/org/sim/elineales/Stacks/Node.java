@@ -1,4 +1,4 @@
-package Stacks;
+package org.sim.elineales.Stacks;
 
 public class Node<T>{
 	private	T data;

@@ -15,11 +15,11 @@ public class Recibo {
         this.fechaEmision = new Date();
     }
 
-    public void generarFactura() {
+    public void generarRecibo() {
 
     }
 
-    public void imprimirFactura() {
+    public void imprimirRecibo() {
 
     }
 }
