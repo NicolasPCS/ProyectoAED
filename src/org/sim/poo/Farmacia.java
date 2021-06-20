@@ -9,8 +9,9 @@ public class Farmacia {
     private boolean disponible;
     private Date horarioAtencion;
     private String telefono;
+	private Producto producto;
 
-    public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
+	public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
         this.idFarmacia += 1;
         this.dirSede = dirSede;
         this.disponible = false;
@@ -59,9 +60,9 @@ public class Farmacia {
     	
     	Scanner entrada = new Scanner(System.in);
 		n = entrada.nextInt();
-    	
-    	Scanner entrada = new Scanner(System.in);
-		Producto = entrada.nextLine();
+
+		entrada = new Scanner(System.in);
+		producto = entrada.nextLine();
 		
 		prods += Producto;
 		

@@ -20,8 +20,6 @@ public class Carrito implements TipodePago{
 		a = entrada.nextLine();
 		
 		return this.tipopago(a);
-		
-		
 	}
 
 	@Override
