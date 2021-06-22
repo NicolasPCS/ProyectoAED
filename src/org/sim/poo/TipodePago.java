@@ -1,5 +1,6 @@
 package org.sim.poo;
 
+
 public interface TipodePago  {
 	
 	public boolean transferenciaBancaria();

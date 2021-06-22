@@ -54,16 +54,17 @@ public class Farmacia {
     }
 
     public void listarProductos() {
-    	String prods [];
-    	int n;
+    	
+    	String Producto;
+    	int n = 5;
+    	String prods[];
     	
     	Scanner entrada = new Scanner(System.in);
 		n = entrada.nextInt();
     	
-    	Scanner entrada = new Scanner(System.in);
-		Producto = entrada.nextLine();
+    	Scanner entrada1 = new Scanner(System.in);
+		Producto = entrada1.nextLine();
 		
-		prods += Producto;
 		
 		
     	
