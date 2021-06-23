@@ -62,9 +62,9 @@ public class Farmacia {
 		n = entrada.nextInt();
 
 		entrada = new Scanner(System.in);
-		producto = entrada.nextLine();
+		// producto = entrada.nextLine();
 		
-		prods += Producto;
+		// prods += Producto;
 		
 		
     	
