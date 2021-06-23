@@ -16,7 +16,7 @@ public class mainUsuario {
                     \t5. Salir""");
 
             int opcion = 0;
-            System.out.println("\nA continuacion seleccione una opcion (1/2/3/4/5)");
+            System.out.print("\nA continuacion seleccione una opcion (1/2/3/4/5): ");
             Scanner s = new Scanner(System.in);
 
             opcion = s.nextInt();
@@ -32,8 +32,19 @@ public class mainUsuario {
                     System.out.println("Ver productos por farmacia");
                     break;
                 case 4:
+                    Scanner sc = new Scanner(System.in);
                     System.out.println("Generar mi carrito de compras");
-                    TDAList<Producto> carrito = new ListLinked<>();
+                    TDAList<Producto> producto = new ListLinked<>();
+                    Producto p = new Producto();
+                    producto.insertFirst(p.ingresarDatosProd());
+                    System.out.println();
+                    producto.insertFirst(p.ingresarDatosProd());
+                    System.out.println(producto);
+
+                    /*TDAList<Producto> carrito = new ListLinked<>();
+                    System.out.println("Ingrese el nombre del producto a buscar: ");
+                    String nombre = sc.nextLine();
+                    System.out.println(carrito.search(nombre));*/
 
                     break;
                 case 5:
