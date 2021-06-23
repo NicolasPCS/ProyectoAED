@@ -8,7 +8,7 @@ public class LinkedStack <E> implements Stack<E> {
 		this.tope = null;
 	}
 	
-	public void push(E x)
+	public void push(E x) 
 	{
 		this.tope = new Node<E>(x, this.tope);
 	}
@@ -16,7 +16,7 @@ public class LinkedStack <E> implements Stack<E> {
 	{
 		if(this.isEmpty())
 		{
-			throw new ExceptionIsEmpty("El inventario esta vacio. \nIntente con otro o recargue la página.");
+			throw new ExceptionIsEmpty("El inventario esta vacio. \nIntente con otro o recargue la ventana.");
 		}
 		else
 		{
@@ -29,7 +29,7 @@ public class LinkedStack <E> implements Stack<E> {
 	{
 		if(this.isEmpty())
 		{
-			throw new ExceptionIsEmpty("El inventario esta vacio. \nIntente con otro o recargue la página.");
+			throw new ExceptionIsEmpty("El inventario esta vacio. \nIntente con otro o recargue la ventana.");
 		}
 		else
 		{
@@ -39,6 +39,16 @@ public class LinkedStack <E> implements Stack<E> {
 	public boolean isEmpty()
 	{
 		return this.tope == null;
+	}
+	
+	public String toString()
+	{
+		String src = "";
+		Node papa = this.tope;
+		while (papa != null)
+		{
+			return "- " + papa.tope;
+		}
 	}
 	
 }
