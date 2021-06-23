@@ -24,6 +24,7 @@ public class mainUsuario {
             switch (opcion) {
                 case 1:
                     System.out.println("Crear una cuenta");
+                    System.out.println("Hola gaa");
                     break;
                 case 2:
                     System.out.println("Listar medicamentos");
