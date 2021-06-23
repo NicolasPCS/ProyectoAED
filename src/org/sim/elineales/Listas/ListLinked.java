@@ -30,6 +30,14 @@ public class ListLinked <T> implements TDAList<T> {
 				return i;
 		return -1;			
 	}
+
+	public int search(String nombre) {
+		Node <T> aux = this.first;
+		for(int i = 0; aux != null; aux = aux.getNext(), i++)
+			if(aux.getData().equals(nombre))
+				return i;
+		return -1;
+	}
 	
 	public void insertLast(T x) {
 		if(this.isEmptyList())
