@@ -1,23 +1,12 @@
 package org.sim.poo;
 
-public class TipodePago {
+
+public interface TipodePago  {
 	
-	public void transferenciaBancaria(){
-		
-		
-	}
+	public boolean transferenciaBancaria();
+			
+	public boolean tarjetaCredito();
 	
-	public void tarjetaCredito() {
-		
-		
-		
-	}
-	
-	public void generarFactura() {
-		
-		
-		
-		
-	}
+	public boolean generarFactura();
 
 }

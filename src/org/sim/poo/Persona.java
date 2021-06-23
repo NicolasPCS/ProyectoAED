@@ -18,7 +18,6 @@ public class Persona {
 	
 	public Persona() {
 		super();
-
 	}
 
 	
@@ -76,9 +75,6 @@ public class Persona {
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	
-	
-	
 	
 	
 }
