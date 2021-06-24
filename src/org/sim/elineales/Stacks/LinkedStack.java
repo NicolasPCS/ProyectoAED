@@ -47,8 +47,9 @@ public class LinkedStack <E> implements Stack<E> {
 		Node papa = this.tope;
 		while (papa != null)
 		{
-			return "- " + papa.tope;
+			return "- " + papa.getNext();
 		}
+		return "";
 	}
 	
 }
