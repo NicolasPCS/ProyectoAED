@@ -19,6 +19,37 @@ public class Farmacia {
         this.telefono = telefono;
     }
 
+	public void agregarFarmaceuticos() {
+		Scanner enter = new Scanner (System.in);
+		System.out.println("INGRESE CUANTOS FARMACEUTICOS VA A REGISTRAR");
+		int num = enter.nextInt();
+		
+		for (int i = 0; i < num; i++) {
+			System.out.println("\nNombre: ");
+			String nombre = enter.nextLine();
+			
+			System.out.println("\nApellido: ");
+			String apellido  = enter.nextLine();
+			
+			System.out.println("\nEdad: ");
+			int edad = enter.nextInt();
+			
+			System.out.println("\nCorreo: ");
+			String correo = enter.nextLine();
+			
+			System.out.println("\nFarmacia : ");
+			String farmacia = enter.nextLine();
+			
+			System.out.println("\nContraseña: ");
+			String contra = enter.nextLine();
+			
+	
+			Farmaceutico f = new Farmaceutico(nombre, apellido, edad, correo, farmacia, contra);
+			
+			
+		}
+	}
+	
     public void verHorario() {
     	
     	int opc = 0;
