@@ -10,6 +10,9 @@ public class Farmacia {
     private Date horarioAtencion;
     private String telefono;
 	private Producto producto;
+	
+	
+	public Farmacia() {}
 
 	public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
         this.idFarmacia += 1;
@@ -23,31 +26,36 @@ public class Farmacia {
 		Scanner enter = new Scanner (System.in);
 		System.out.println("INGRESE CUANTOS FARMACEUTICOS VA A REGISTRAR");
 		int num = enter.nextInt();
+		enter.nextLine();
 		
 		for (int i = 0; i < num; i++) {
-			System.out.println("\nNombre: ");
+			System.out.println("-------------------------------------------");
+			System.out.print("Nombre: ");
 			String nombre = enter.nextLine();
 			
-			System.out.println("\nApellido: ");
+			System.out.print("Apellido: ");
 			String apellido  = enter.nextLine();
 			
-			System.out.println("\nEdad: ");
+			System.out.print("Edad: ");
 			int edad = enter.nextInt();
+			enter.nextLine();
 			
-			System.out.println("\nCorreo: ");
+			System.out.print("Correo: ");
 			String correo = enter.nextLine();
 			
-			System.out.println("\nFarmacia : ");
+			System.out.print("Farmacia : ");
 			String farmacia = enter.nextLine();
 			
-			System.out.println("\nContraseña: ");
+			System.out.print("Contraseña: ");
 			String contra = enter.nextLine();
 			
-	
+
 			Farmaceutico f = new Farmaceutico(nombre, apellido, edad, correo, farmacia, contra);
-			
-			
+			System.out.println("Farmaceutico registrado:\n" + f.getNombre() + 
+					" - " + f.getApellido() + " - " + f.getEdad() + " - " + f.getCorreo() + 
+					" - " + f.getFarmacia());
 		}
+		
 	}
 	
     public void verHorario() {
