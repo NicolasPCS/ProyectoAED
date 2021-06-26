@@ -50,6 +50,6 @@ public class mainFarmacaeutico {
         	System.out.println("Usted salio del sitio");
             break;
             
+        }
     }
-}
 }
