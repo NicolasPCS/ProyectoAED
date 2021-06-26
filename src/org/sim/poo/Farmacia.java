@@ -9,14 +9,11 @@ public class Farmacia {
     private boolean disponible;
     private Date horarioAtencion;
     private String telefono;
-<<<<<<< HEAD
 	private String producto;
-=======
-	private Producto producto;
+	private Producto producto1;
 	
 	
 	public Farmacia() {}
->>>>>>> f514f3f9efb835bdf80e1d83be8435901bafcb17
 
 	public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
         this.idFarmacia += 1;
@@ -106,8 +103,7 @@ public class Farmacia {
     	Scanner entrada = new Scanner(System.in);
 		n = entrada.nextInt();
 
-<<<<<<< HEAD
-    	
+
     	Scanner entrada1 = new Scanner(System.in);
 		Producto = entrada1.nextLine();
 
@@ -116,16 +112,12 @@ public class Farmacia {
 		producto = entrada.nextLine();
 
 		
-=======
-    	Scanner entrada1 = new Scanner(System.in);
-		Producto = entrada1.nextLine();
+
+    	Scanner entrada11 = new Scanner(System.in);
+		Producto = entrada11.nextLine();
 
 		entrada = new Scanner(System.in);
-		// producto = entrada.nextLine();
->>>>>>> f514f3f9efb835bdf80e1d83be8435901bafcb17
-		
-		// prods += Producto;
-		// producto = entrada.nextLine();
+
 
 
 		
