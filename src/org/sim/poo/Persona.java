@@ -4,11 +4,13 @@ import java.util.Scanner;
 public class Persona {
 	
 	private String nombre;
+	private String apellido;
 	private int dni;
 	private int edad;
 	private String direccion;
 	private String FechaNacimiento;
 	private String estadoCivil;
+	private String correo;
 	
 	public Persona(String nombre, int dni) {
 		super();
@@ -18,6 +20,14 @@ public class Persona {
 	
 	public Persona() {
 		super();
+	}
+	
+	
+	public Persona(String nombre, String apellido, int edad, String correo) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+		this.correo = correo;
 	}
 
 	
@@ -32,6 +42,14 @@ public class Persona {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	
+	public String getApellido() {
+		return this.apellido;
 	}
 	
 	public void dniPersona(String dniPersona) {		
@@ -76,5 +94,12 @@ public class Persona {
 		this.estadoCivil = estadoCivil;
 	}
 	
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+	
+	public String getCorreo() {
+		return this.correo;
+	}
 	
 }

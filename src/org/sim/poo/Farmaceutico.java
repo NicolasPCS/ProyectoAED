@@ -8,6 +8,7 @@ public class Farmaceutico extends Persona {
 	
 	private int codigo;
 	private String Farmacia;
+	private String contra;
 	private int horaEntrada;
 	private int horaSalida;
 	
@@ -19,9 +20,18 @@ public class Farmaceutico extends Persona {
 		this.horaSalida = horaSalida;
 	}
 	
+	public Farmaceutico(String nombre, String apellido, int edad, String correo, 
+			String farmacia, String contra){
+		super(nombre, apellido, edad, correo);
+		this.codigo = 1;
+		this.Farmacia = farmacia;
+		this.contra = contra;
+	}
+	
 	public Farmaceutico() {
 		super();
 	}
+	
 	
 	public void IniciarSesion() {
 		String usuario;
@@ -33,9 +43,9 @@ public class Farmaceutico extends Persona {
 		usuario = enter.nextLine();
 		System.out.println("\nContrase�a: ");
 		contrasena = enter.nextLine();
-		
-		
+			
 	}
+	
 	
 	public void RegistrarMedicamento(Producto pro) {
 		
