@@ -1,14 +1,13 @@
-<<<<<<< HEAD
-=======
+
 import java.util.Scanner;
->>>>>>> b043e7cf8dd798822fe34ddb45fcf75dcdc7d255
+
 
 import org.sim.poo.Farmaceutico;
 import org.sim.poo.Producto;
 
 public class mainFarmacaeutico {
     public static void main(String[] args) {
-<<<<<<< HEAD
+
     	
     	Producto pro = new Producto();
     	
@@ -17,7 +16,7 @@ public class mainFarmacaeutico {
     	farma.VerMedicamentos(pro);
     	farma.IniciarSesion();
     	
-=======
+
     	Farmaceutico Fabricio = new Farmaceutico();
     	
     	System.out.println("Como usuario usted podra realizar lo siguiente:");
@@ -33,6 +32,19 @@ public class mainFarmacaeutico {
         Scanner s = new Scanner(System.in);
 
         opcion = s.nextInt();
->>>>>>> b043e7cf8dd798822fe34ddb45fcf75dcdc7d255
+
+        switch (opcion) {
+        case 1:
+        	Fabricio.IniciarSesion(); //Guardar datos Listas?
+            break;
+        case 2:
+        	Producto Veneno = new Producto(); //Llame al contructor 
+            Fabricio.RegistrarMedicamento(Veneno); 
+            break;
+        case 3:
+        	System.out.println("Dejen de robar codigo P.D. Jackeline consigue el codigo de polar");
+            break;
+            
     }
+}
 }
