@@ -39,6 +39,9 @@ public class ListArray<T> implements TDAList<T>{
     }
 
     @Override
+    public int search(String x) { return 0; }
+
+    @Override
     public void insertLast(T x) {
         if (this.isFull())
             System.out.println("List is Full");
