@@ -39,7 +39,7 @@ public class ListArray<T> implements TDAList<T>{
     }
 
     @Override
-    public int search(String x) { return 0; }
+    public T search(String x) { return null; }
 
     @Override
     public void insertLast(T x) {

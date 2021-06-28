@@ -25,18 +25,23 @@ public class ListLinked <T> implements TDAList<T> {
 	
 	public int search(T x) {
 		Node <T> aux = this.first;
-		for(int i = 0; aux != null; aux = aux.getNext(), i++)
-			if(aux.getData().equals(x))
+		for(int i = 0; aux != null; aux = aux.getNext(), i++) {
+			
+			if(aux.getData().equals(x)) {
+
 				return i;
+			}
+		}
 		return -1;			
 	}
 
-	public int search(String nombre) {
+	public T search(String nombre) {
 		Node <T> aux = this.first;
 		for(int i = 0; aux != null; aux = aux.getNext(), i++)
+
 			if(aux.getData().equals(nombre))
-				return i;
-		return -1;
+				return aux.getData();
+		return null;
 	}
 	
 	public void insertLast(T x) {
