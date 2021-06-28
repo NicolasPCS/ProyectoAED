@@ -7,9 +7,6 @@ import java.util.Scanner;
 
 public class mainUsuario {
     public static void main(String[] args) {
-    	try {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        } catch (Exception e) {}
         try {
             System.out.println("Como usuario usted podra realizar lo siguiente:");
             System.out.println("""
@@ -34,7 +31,6 @@ public class mainUsuario {
                     System.out.println("Listar medicamentos");
                     break;
                 case 3:
-                	System.out.print("cls");
                     System.out.println("Seleccione las farmacias de nuestro sistema");
                     System.out.println("""
                             \t1. Inkafarma
@@ -77,7 +73,6 @@ public class mainUsuario {
         }
         public static void farmacias(int opc)
         {
-        	System.out.print("cls");
         switch (opc) {
         case 1:
             System.out.println("Bienvenido a Inkafarma :)");
@@ -98,7 +93,7 @@ public class mainUsuario {
                     \t* Alcohol""");
             break;
         case 3:
-            System.out.println("Bienvenido a Mifarma :)");
+            System.out.println("Bienvenido a Fasa :)");
             System.out.println("Productos exclusivos para ti:");
             System.out.println("""
                     \t* Medicamentos con receta
