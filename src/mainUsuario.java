@@ -24,7 +24,6 @@ public class mainUsuario {
             switch (opcion) {
                 case 1:
                     System.out.println("Crear una cuenta");
-                    System.out.println("Hola gaa");
                     break;
                 case 2:
                     System.out.println("Listar medicamentos");
@@ -39,13 +38,15 @@ public class mainUsuario {
                     Producto p = new Producto();
                     producto.insertFirst(p.ingresarDatosProd());
                     System.out.println();
-                    producto.insertFirst(p.ingresarDatosProd());
+                    //producto.insertFirst(p.ingresarDatosProd());
                     System.out.println(producto);
 
-                    /*TDAList<Producto> carrito = new ListLinked<>();
-                    System.out.println("Ingrese el nombre del producto a buscar: ");
-                    String nombre = sc.nextLine();
-                    System.out.println(carrito.search(nombre));*/
+                    TDAList<Producto> carrito = new ListLinked<>();
+                    System.out.print("Ingrese el nombre del producto a buscar: ");
+                    int codigo = sc.nextInt();
+                    Producto busqueda = new Producto(codigo);
+                    System.out.println(busqueda);
+                    System.out.print(carrito.search(busqueda));
 
                     break;
                 case 5:

@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Producto {
-    private String codigo;
+    private int codigo;
     private String nombre;
     private String tipo;
     private String precauciones;
@@ -14,9 +14,9 @@ public class Producto {
     private int cantidad;
 
     public Producto() {}
+    public Producto(int codigo) {this.codigo = codigo;}
 
-    public Producto(String codigo, String nombre, String tipo, String precauciones, double precio, String fechaVencimiento, int cantidad) {
-        this();
+    public Producto(int codigo, String nombre, String tipo, String precauciones, double precio, String fechaVencimiento, int cantidad) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -69,13 +69,13 @@ public class Producto {
 	public Producto ingresarDatosProd() {
 		Scanner s = new Scanner(System.in);
 		System.out.print("\tCodigo del producto: ");
-		String codigo = s.nextLine();
+		int codigo = s.nextInt();
 		System.out.print("\tNombre del producto: ");
-		String nombre = s.nextLine();
+		String nombre = s.next();
 		System.out.print("\tTipo del producto: ");
-		String tipo = s.nextLine();
+		String tipo = s.next();
 		System.out.print("\tPrecauciones del producto: ");
-		String precauciones = s.nextLine();
+		String precauciones = s.next();
 		System.out.print("\tPrecio del producto: ");
 		double precio = s.nextDouble();
 		System.out.print("\tFecha de vencimiento (dd-mm-aaaa): ");
@@ -112,11 +112,11 @@ public class Producto {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Producto producto = (Producto) o;
-		return Objects.equals(codigo, producto.codigo) && Objects.equals(nombre, producto.nombre);
+		return codigo == producto.codigo;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(codigo, nombre);
+		return Objects.hash(codigo);
 	}
 }
