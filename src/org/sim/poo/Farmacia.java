@@ -1,4 +1,4 @@
-package org.sim.poo;
+package src.org.sim.poo;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -54,7 +54,7 @@ public class Farmacia {
 
     }
 
-    public void listarProductos() {
+    /*public void listarProductos() {
     	
     	String Producto;
     	int n = 5;
@@ -75,7 +75,7 @@ public class Farmacia {
 		
 		
     	
-    }
+    }*/
 
     @Override
     public String toString() {

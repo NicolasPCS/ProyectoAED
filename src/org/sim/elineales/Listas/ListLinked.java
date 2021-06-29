@@ -1,4 +1,4 @@
-package org.sim.elineales.Listas;
+package src.org.sim.elineales.Listas;
 
 public class ListLinked <T> implements TDAList<T> {
 	private Node <T> first;
@@ -40,20 +40,12 @@ public class ListLinked <T> implements TDAList<T> {
 			this.count++;
 		}
 	}
-	
-	//PreCondition: List is not empty
-	private Node <T> getLastNode(){
-		Node <T> aux = this.first;
-		while(aux.getNext() != null)
-			aux = aux.getNext();
-		return aux;
-	}
-	
+
 	public void insertFirst(T x) {
 		this.first = new Node <T> (x, this.first);
 		this.count++;
 	}
-	
+
 	public void remove(T x) {
 		if(first==null)
             System.out.println("The List Is Empty");
@@ -72,6 +64,39 @@ public class ListLinked <T> implements TDAList<T> {
         count--;
 	}
 	
+	public String toString() {
+		String str = "";
+		Node <T> aux = this.first;
+		for(int i = 0; aux != null; aux = aux.getNext(), i++)
+			str += "["+i+"] = " +aux.getData()+"\n";
+		return str;	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//PreCondition: List is not empty
+	private Node <T> getLastNode(){
+		Node <T> aux = this.first;
+		while(aux.getNext() != null)
+			aux = aux.getNext();
+		return aux;
+	}
+	
 	public int ocurrencias(T x) {
 		Node <T> aux = this.first;
 		for(int i = 0; aux != null; aux = aux.getNext(), i++)
@@ -80,12 +105,5 @@ public class ListLinked <T> implements TDAList<T> {
 		return -1;
 	}
 	
-	public String toString() {
-		String str = "";
-		Node <T> aux = this.first;
-		for(int i = 0; aux != null; aux = aux.getNext(), i++)
-			str += "["+i+"] = " +aux.getData()+"\n";
-		return str;
-		
-	}
+	
 }

@@ -1,4 +1,4 @@
-package org.sim.poo;
+package src.org.sim.poo;
 import java.util.Date;
 
 import java.util.Scanner;
@@ -12,7 +12,6 @@ public class Farmaceutico extends Persona {
 	private int horaSalida;
 	
 	public Farmaceutico(int codigo, String farmacia, int horaEntrada, int horaSalida) {
-		super();
 		this.codigo = codigo;
 		Farmacia = farmacia;
 		this.horaEntrada = horaEntrada;

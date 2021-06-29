@@ -1,4 +1,4 @@
-package org.sim.poo;
+package src.org.sim.poo;
 
 
 public interface TipodePago  {

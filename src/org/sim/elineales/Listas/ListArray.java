@@ -1,4 +1,4 @@
-package org.sim.elineales.Listas;
+package src.org.sim.elineales.Listas;
 
 public class ListArray<T> implements TDAList<T>{
     private T[] list;

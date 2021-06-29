@@ -1,4 +1,4 @@
-package org.sim.elineales.Stacks;
+package src.org.sim.elineales.Stacks;
 
 public class LinkedStack <E> implements Stack<E> {
 	private Node<E> tope;

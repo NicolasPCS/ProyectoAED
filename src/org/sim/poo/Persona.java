@@ -1,36 +1,47 @@
-package org.sim.poo;
+package src.org.sim.poo;
 import java.util.Scanner;
 
-public class Persona {
+public class Persona <T> {
 	
-	private String nombre;
-	private int dni;
-	private int edad;
-	private String direccion;
-	private String FechaNacimiento;
-	private String estadoCivil;
+	private T nombre;
+	private T dni;
+	private T edad;
+	private T direccion;
+	private T FechaNacimiento;
+	private T estadoCivil;
 	
-	public Persona(String nombre, int dni) {
+	public Persona(T nombre, T dni) {
 		super();
 		this.nombre = nombre;
 		this.dni = dni;
 	}
 	
-	public Persona() {
+	public Persona(T nombre, T dni, T edad, T direccion, T fechaNacimiento, T estadoCivil) {
 		super();
+		this.nombre = nombre;
+		this.dni = dni;
+		this.edad = edad;
+		this.direccion = direccion;
+		setFechaNacimiento(fechaNacimiento);
+		this.estadoCivil = estadoCivil;
 	}
 
-	
-	public void nombrePersona(String nombre) {		
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", dni=" + dni + ", edad=" + edad + ", direccion=" + direccion
+				+ ", FechaNacimiento=" + FechaNacimiento + ", estadoCivil=" + estadoCivil + "]";
+	}
+
+	public void nombrePersona(T nombre) {		
 		Scanner entrada = new Scanner(System.in);
-		nombre = entrada.nextLine();		
+		nombre = (T) entrada.nextLine();		
 	}
 	
-	public String getNombre() {
+	public T getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public void setNombre(T nombre) {
 		this.nombre = nombre;
 	}
 	
@@ -39,41 +50,49 @@ public class Persona {
 		dniPersona = entrada.nextLine();		
 	}
 
-	public int getDni() {
+	public T getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(T dni) {
 		this.dni = dni;
 	}
 
-	public int getEdad() {
+	public T getEdad() {
 		return edad;
 	}
 
-	public void setEdad(int edad) {
+	public void setEdad(T edad) {
 		this.edad = edad;
 	}
 
-	public String getDireccion() {
+	public T getDireccion() {
 		return direccion;
 	}
 
-	public void setDireccion(String direccion) {
+	public void setDireccion(T direccion) {
 		this.direccion = direccion;
 	}
 	
-	public void estadoCivil(String estadoCivil) {		
+	public void estadoCivil(T estadoCivil) {		
 		Scanner entrada = new Scanner(System.in);
-		estadoCivil = entrada.nextLine();		
+		estadoCivil = (T) entrada.nextLine();		
 	}
 
-	public String getEstadoCivil() {
+	public T getEstadoCivil() {
 		return estadoCivil;
 	}
 
-	public void setEstadoCivil(String estadoCivil) {
+	public void setEstadoCivil(T estadoCivil) {
 		this.estadoCivil = estadoCivil;
+	}
+
+	public T getFechaNacimiento() {
+		return FechaNacimiento;
+	}
+
+	public void setFechaNacimiento(T fechaNacimiento2) {
+		FechaNacimiento = fechaNacimiento2;
 	}
 	
 	
