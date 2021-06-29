@@ -1,47 +1,30 @@
 package src.org.sim.poo;
 
 import java.util.Date;
+import java.util.Objects;
+import java.util.Scanner;
 
 public class Producto {
-    private int idProducto = 0;
+    private int codigo;
     private String nombre;
     private String tipo;
     private String precauciones;
-    private Farmaceutico farmaceutico;
     private double precio;
-    private Date fechaVencimiento;
-    private String FechVen;
-    public String getFechVen() {
-		return FechVen;
-	}
-
-	public void setFechVen(String fechVen) {
-		FechVen = fechVen;
-	}
-
-	private int cantidad;
+    private String fechaVencimiento;
+    private int cantidad;
 
     public Producto() {}
+    public Producto(int codigo) {this.codigo = codigo;}
 
-    public Producto(String nombre, String tipo, String precauciones, Farmaceutico farmaceutico, double precio, Date fechaVencimiento, int cantidad) {
-        this();
-        this.idProducto += 1;
+    public Producto(int codigo, String nombre, String tipo, String precauciones, double precio, String fechaVencimiento, int cantidad) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
         this.precauciones = precauciones;
-        this.farmaceutico = new Farmaceutico();
         this.precio = precio;
-        this.fechaVencimiento = new Date();
+        this.fechaVencimiento = fechaVencimiento;
         this.cantidad = cantidad;
     }
-
-    public int getIdProducto() {
-		return idProducto;
-	}
-
-	public void setIdProducto(int idProducto) {
-		this.idProducto = idProducto;
-	}
 
 	public String getNombre() {
 		return nombre;
@@ -67,28 +50,12 @@ public class Producto {
 		this.precauciones = precauciones;
 	}
 
-	public Farmaceutico getFarmaceutico() {
-		return farmaceutico;
-	}
-
-	public void setFarmaceutico(Farmaceutico farmaceutico) {
-		this.farmaceutico = farmaceutico;
-	}
-
 	public double getPrecio() {
 		return precio;
 	}
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
-	}
-
-	public Date getFechaVencimiento() {
-		return fechaVencimiento;
-	}
-
-	public void setFechaVencimiento(Date fechaVencimiento) {
-		this.fechaVencimiento = fechaVencimiento;
 	}
 
 	public int getCantidad() {
@@ -99,8 +66,24 @@ public class Producto {
 		this.cantidad = cantidad;
 	}
 
-	public void ingresarDatosProd() {
+	public Producto ingresarDatosProd() {
+		Scanner s = new Scanner(System.in);
+		System.out.print("\tCodigo del producto: ");
+		int codigo = s.nextInt();
+		System.out.print("\tNombre del producto: ");
+		String nombre = s.next();
+		System.out.print("\tTipo del producto: ");
+		String tipo = s.next();
+		System.out.print("\tPrecauciones del producto: ");
+		String precauciones = s.next();
+		System.out.print("\tPrecio del producto: ");
+		double precio = s.nextDouble();
+		System.out.print("\tFecha de vencimiento (dd-mm-aaaa): ");
+		String fechaVen = s.next();
+		System.out.print("\tCantidad de productos a ingresar: ");
+		int cantidad = s.nextInt();
 
+		return new Producto(codigo, nombre, tipo, precauciones, precio, fechaVen, cantidad);
     }
 
     public void mostrarDatosProd(int idProd) {
@@ -111,17 +94,29 @@ public class Producto {
 
     }
 
-    @Override
-    public String toString() {
-        return "Producto{" +
-                "idProducto=" + idProducto +
-                ", nombre='" + nombre + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", precauciones='" + precauciones + '\'' +
-                ", farmaceutico=" + farmaceutico +
-                ", precio=" + precio +
-                ", fechaVencimiento=" + fechaVencimiento +
-                ", cantidad=" + cantidad +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Producto{" +
+				"codigo='" + codigo + '\'' +
+				", nombre='" + nombre + '\'' +
+				", tipo='" + tipo + '\'' +
+				", precauciones='" + precauciones + '\'' +
+				", precio=" + precio +
+				", fechaVencimiento='" + fechaVencimiento + '\'' +
+				", cantidad=" + cantidad +
+				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Producto producto = (Producto) o;
+		return codigo == producto.codigo;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigo);
+	}
 }

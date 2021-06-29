@@ -5,6 +5,7 @@ public interface TDAList <T> {
 	int length();
 	void destroyList();
 	int search(T x);
+	T search(String x);
 	void insertLast(T x);
 	void insertFirst(T x);
 	void remove(T x);

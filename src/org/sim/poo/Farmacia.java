@@ -9,7 +9,11 @@ public class Farmacia {
     private boolean disponible;
     private Date horarioAtencion;
     private String telefono;
-	private Producto producto;
+	private String producto;
+	private Producto producto1;
+	
+	
+	public Farmacia() {}
 
 	public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
         this.idFarmacia += 1;
@@ -19,6 +23,42 @@ public class Farmacia {
         this.telefono = telefono;
     }
 
+	public void agregarFarmaceuticos() {
+		Scanner enter = new Scanner (System.in);
+		System.out.println("INGRESE CUANTOS FARMACEUTICOS VA A REGISTRAR");
+		int num = enter.nextInt();
+		enter.nextLine();
+		
+		for (int i = 0; i < num; i++) {
+			System.out.println("-------------------------------------------");
+			System.out.print("Nombre: ");
+			String nombre = enter.nextLine();
+			
+			System.out.print("Apellido: ");
+			String apellido  = enter.nextLine();
+			
+			System.out.print("Edad: ");
+			int edad = enter.nextInt();
+			enter.nextLine();
+			
+			System.out.print("Correo: ");
+			String correo = enter.nextLine();
+			
+			System.out.print("Farmacia : ");
+			String farmacia = enter.nextLine();
+			
+			System.out.print("Contraseña: ");
+			String contra = enter.nextLine();
+			
+
+			Farmaceutico f = new Farmaceutico(nombre, apellido, edad, correo, farmacia, contra);
+			System.out.println("Farmaceutico registrado:\n" + f.getNombre() + 
+					" - " + f.getApellido() + " - " + f.getEdad() + " - " + f.getCorreo() + 
+					" - " + f.getFarmacia());
+		}
+		
+	}
+	
     public void verHorario() {
     	
     	int opc = 0;
@@ -62,17 +102,24 @@ public class Farmacia {
     	
     	Scanner entrada = new Scanner(System.in);
 		n = entrada.nextInt();
-<<<<<<< HEAD
-    	
+
+
     	Scanner entrada1 = new Scanner(System.in);
 		Producto = entrada1.nextLine();
-=======
+
 
 		entrada = new Scanner(System.in);
 		producto = entrada.nextLine();
->>>>>>> cde743c96f5c9f7b8eaf6d836bacd6c698d0a491
+
 		
-		
+
+    	Scanner entrada11 = new Scanner(System.in);
+		Producto = entrada11.nextLine();
+
+		entrada = new Scanner(System.in);
+
+
+
 		
     	
     }*/

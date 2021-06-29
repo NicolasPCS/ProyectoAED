@@ -8,6 +8,7 @@ public class Farmaceutico extends Persona {
 	
 	private int codigo;
 	private String Farmacia;
+	private String contra;
 	private int horaEntrada;
 	private int horaSalida;
 	
@@ -18,23 +19,32 @@ public class Farmaceutico extends Persona {
 		this.horaSalida = horaSalida;
 	}
 	
+	public Farmaceutico(String nombre, String apellido, int edad, String correo, 
+			String farmacia, String contra){
+		super(nombre, apellido, edad, correo);
+		this.codigo = 1;
+		this.Farmacia = farmacia;
+		this.contra = contra;
+	}
+	
 	public Farmaceutico() {
 		super();
 	}
 	
+	
 	public void IniciarSesion() {
 		String usuario;
-		String contraseña;
+		String contrasena;
 		
 		Scanner enter = new Scanner(System.in);
 		
 		System.out.println("\nIngrese su Usuario: ");
 		usuario = enter.nextLine();
-		System.out.println("\nContraseña: ");
-		contraseña = enter.nextLine();
-		
-		
+		System.out.println("\nContraseï¿½a: ");
+		contrasena = enter.nextLine();
+			
 	}
+	
 	
 	public void RegistrarMedicamento(Producto pro) {
 		
@@ -45,7 +55,7 @@ public class Farmaceutico extends Persona {
 		
 		System.out.println("\nCodigo: ");
 		int cod = enter.nextInt();
-		pro.setIdProducto(cod);
+		// pro.setIdProducto(cod);
 		
 		System.out.println("\nTipo: ");
 		String tip = enter.nextLine();
@@ -61,7 +71,7 @@ public class Farmaceutico extends Persona {
 		
 		System.out.println("\nFecha Vencimiento : ");
 		String fecha = enter.nextLine();
-		pro.setFechVen(fecha);
+		// pro.setFechVen(fecha);
 		
 		System.out.println("\nCantidad: ");
 		int cant = enter.nextInt();
@@ -71,7 +81,7 @@ public class Farmaceutico extends Persona {
 		double pre = enter.nextDouble();
 		pro.setPrecio(pre);
 		
-		System.out.println("\n¿Desea Guardar los datos ingresados?: Si = 0 y No = 1");
+		System.out.println("\nï¿½Desea Guardar los datos ingresados?: Si = 0 y No = 1");
 		int res = enter.nextInt();
 		if (res==0) {
 			System.out.println("\nSe guardaron correctamente los datos ingresados.");
@@ -89,8 +99,8 @@ public class Farmaceutico extends Persona {
 		System.out.println("\n====================================");
 		
 		System.out.println("\nCodigo: ");
-		int id = pro.getIdProducto();
-		System.out.println(id);
+		// int id = pro.getIdProducto();
+		// System.out.println(id);
 		
 		System.out.println("\nTipo: ");
 		String tip = pro.getTipo();
@@ -105,8 +115,8 @@ public class Farmaceutico extends Persona {
 		System.out.println(precau);
 		
 		System.out.println("\nFecha Vencimiento : ");
-		String fecha = pro.getFechVen();
-		System.out.println(fecha);
+		// String fecha = pro.getFechVen();
+		// System.out.println(fecha);
 		
 		System.out.println("\nCantidad: ");
 		int cant = pro.getCantidad();

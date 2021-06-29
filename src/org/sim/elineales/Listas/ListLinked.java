@@ -25,10 +25,23 @@ public class ListLinked <T> implements TDAList<T> {
 	
 	public int search(T x) {
 		Node <T> aux = this.first;
-		for(int i = 0; aux != null; aux = aux.getNext(), i++)
-			if(aux.getData().equals(x))
+		for(int i = 0; aux != null; aux = aux.getNext(), i++) {
+			
+			if(aux.getData().equals(x)) {
+
 				return i;
+			}
+		}
 		return -1;			
+	}
+
+	public T search(String nombre) {
+		Node <T> aux = this.first;
+		for(int i = 0; aux != null; aux = aux.getNext(), i++)
+
+			if(aux.getData().equals(nombre))
+				return aux.getData();
+		return null;
 	}
 	
 	public void insertLast(T x) {
@@ -46,23 +59,35 @@ public class ListLinked <T> implements TDAList<T> {
 		this.count++;
 	}
 
+<<<<<<< HEAD
+=======
+	@Override
+>>>>>>> 21255626845985a4bfeeba9bb0812b8cd62f1273
 	public void remove(T x) {
-		if(first==null)
-            System.out.println("The List Is Empty");
-        else{
-            Node<T> current = first;
-            Node<T> previous = current.getNext() ;
-            while(current!=null && !current.getData().equals(x)){
-                previous=current;
-                current=current.getNext();
-            }
-            if(current == first && current.getData().equals(x)){
-                first = first.getNext();
-            }else if(current != null)
-                previous.setNext(current.getNext());
-        }
-        count--;
+		int pos = this.search(x);
+		Node<T> head = this.first;
+		Node<T> current = null;
+
+		if (pos != 1) {
+			Node<T> atNode = getNodeAt(pos);
+			if (atNode == this.first){
+				current = this.first;
+				this.first = this.first.getNext();
+				current = null;
+			} else {
+				while (head.getNext() != atNode) {
+					head = head.getNext();
+				}
+				current = head.getNext();
+				head.setNext(current.getNext());
+				current = null;
+			}
+			this.count--;
+		} else {
+			System.out.println("Elemento no encontrado");
+		}
 	}
+<<<<<<< HEAD
 	
 	public String toString() {
 		String str = "";
@@ -106,4 +131,27 @@ public class ListLinked <T> implements TDAList<T> {
 	}
 	
 	
+=======
+
+	public Node<T> getNodeAt(int index) {
+		Node<T> aux = this.first;
+		int cont = 0;
+		while (aux != null) {
+			if (cont == index)
+				break;
+			cont++;
+			aux = aux.getNext();
+		}
+		return aux;
+	}
+
+	public String toString() {
+		String str = "";
+		Node <T> aux = this.first;
+		for(int i = 0; aux != null; aux = aux.getNext(), i++)
+			str += "["+i+"] = " +aux.getData()+"\n";
+		return str;
+		
+	}
+>>>>>>> 21255626845985a4bfeeba9bb0812b8cd62f1273
 }
