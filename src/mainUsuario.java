@@ -53,7 +53,7 @@ public class mainUsuario {
                     System.out.println(producto);
 
                     TDAList<Producto> carrito = new ListLinked<>();
-                    System.out.print("Ingrese el nombre del producto a buscar: ");
+                    System.out.print("Ingrese el codigo del producto a buscar: ");
                     int codigo = sc.nextInt();
                     Producto busqueda = new Producto(codigo);
                     System.out.println(busqueda);
@@ -67,44 +67,44 @@ public class mainUsuario {
                     System.out.println("No ha ingresado una opcion correcta");
                     break;
             }
-        
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        }
-        public static void farmacias(int opc)
-        {
+    }
+    public static void farmacias(int opc)
+    {
         switch (opc) {
-        case 1:
-            System.out.println("Bienvenido a Inkafarma :)");
-            System.out.println("Productos exclusivos para ti:");
-            System.out.println("""
+            case 1:
+                System.out.println("Bienvenido a Inkafarma :)");
+                System.out.println("Productos exclusivos para ti:");
+                System.out.println("""
                     \t* Jarabes
                     \t* Pastillas
                     \t* Pañales
                     \t* Vitaminas""");
-            break;
-        case 2:
-            System.out.println("Bienvenido a Mifarma :)");
-            System.out.println("Productos exclusivos para ti:");
-            System.out.println("""
+                break;
+            case 2:
+                System.out.println("Bienvenido a Mifarma :)");
+                System.out.println("Productos exclusivos para ti:");
+                System.out.println("""
                     \t* Medicamentos con receta
                     \t* Dispositivos
                     \t* Curitas
                     \t* Alcohol""");
-            break;
-        case 3:
-            System.out.println("Bienvenido a Fasa :)");
-            System.out.println("Productos exclusivos para ti:");
-            System.out.println("""
+                break;
+            case 3:
+                System.out.println("Bienvenido a Fasa :)");
+                System.out.println("Productos exclusivos para ti:");
+                System.out.println("""
                     \t* Medicamentos con receta
                     \t* Dispositivos
                     \t* Curitas
                     \t* Alcohol""");
-            break;
-        case 4:
-        	 System.out.println("Salir");
-             break;
+                break;
+            case 4:
+                System.out.println("Salir");
+                break;
         }
         LinkedStack<String> pila = new LinkedStack<String>();
         pila.push("Jarabe");
