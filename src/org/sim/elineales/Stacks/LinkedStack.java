@@ -2,13 +2,13 @@ package org.sim.elineales.Stacks;
 
 public class LinkedStack <E> implements Stack<E> {
 	private Node<E> tope;
-	
+
 	public LinkedStack()
 	{
 		this.tope = null;
 	}
-	
-	public void push(E x) 
+
+	public void push(E x)
 	{
 		this.tope = new Node<E>(x, this.tope);
 	}
@@ -41,4 +41,8 @@ public class LinkedStack <E> implements Stack<E> {
 		return this.tope == null;
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7e86d69c3738232ab8d4e0ca822cf32cf633c8de
 }

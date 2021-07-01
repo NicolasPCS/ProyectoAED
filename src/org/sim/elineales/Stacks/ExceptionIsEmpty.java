@@ -5,7 +5,7 @@ public class ExceptionIsEmpty extends Exception {
 	{
 		super(msg);
 	}
-	
+
 	public ExceptionIsEmpty()
 	{
 		super();
