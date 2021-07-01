@@ -38,13 +38,8 @@ public class ListArray<T> implements TDAList<T>{
         return -1;
     }
 
-<<<<<<< HEAD
     /* @Override
     public T search(int x) { return null; } */
-=======
-    @Override
-    public T search(int x) { return null; }
->>>>>>> 7e86d69c3738232ab8d4e0ca822cf32cf633c8de
 
     @Override
     public void insertLast(T x) {

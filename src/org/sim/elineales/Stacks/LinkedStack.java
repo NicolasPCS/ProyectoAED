@@ -40,9 +40,4 @@ public class LinkedStack <E> implements Stack<E> {
 	{
 		return this.tope == null;
 	}
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 7e86d69c3738232ab8d4e0ca822cf32cf633c8de
 }

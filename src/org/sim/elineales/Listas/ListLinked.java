@@ -35,21 +35,14 @@ public class ListLinked <T> implements TDAList<T> {
 		return -1;
 	}
 
-<<<<<<< HEAD
 	/* public T search(int codigo) {
-=======
 	public T search(int codigo) {
->>>>>>> 7e86d69c3738232ab8d4e0ca822cf32cf633c8de
 		Node <T> aux = this.first;
 		for(int i = 0; aux != null; aux = aux.getNext(), i++)
 			if(aux.getData().equals(codigo))
 				return aux.getData();
 		return null;
-<<<<<<< HEAD
 	} */
-=======
-	}
->>>>>>> 7e86d69c3738232ab8d4e0ca822cf32cf633c8de
 
 	public void insertLast(T x) {
 		if(this.isEmptyList())
