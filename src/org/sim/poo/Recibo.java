@@ -1,4 +1,4 @@
-package src.org.sim.poo;
+package org.sim.poo;
 
 import java.util.Date;
 

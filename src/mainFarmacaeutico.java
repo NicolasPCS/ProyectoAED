@@ -5,7 +5,7 @@ import org.sim.poo.Producto;
 
 public class mainFarmacaeutico {
     public static void main(String[] args) {
-    	Farmaceutico Fabricio = new Farmaceutico();
+    	Farmaceutico Fabricio = new Farmaceutico("","",0,"","","");
     	
     	System.out.println("Como usuario usted podra realizar lo siguiente:");
         System.out.println("""

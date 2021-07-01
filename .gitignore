@@ -1,4 +1,6 @@
 *.idea/
+*out/
+out/
 <<<<<<< HEAD
 /bin/
 =======
@@ -6,6 +8,7 @@ src/.classpath
 src/.project
 .classpath
 .project
+SistemaAED.iml
 <<<<<<< HEAD
 /bin/
 =======

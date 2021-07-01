@@ -1,4 +1,4 @@
-package src.org.sim.elineales.Listas;
+package org.sim.elineales.Listas;
 
 public class Node <T> {
 	private T data;

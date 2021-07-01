@@ -1,4 +1,4 @@
-package src.org.sim.elineales.Listas;
+package org.sim.elineales.Listas;
 
 public class OrderListLinked<T extends Comparable<T>> extends ListLinked<T>{
     private Node<T> first;

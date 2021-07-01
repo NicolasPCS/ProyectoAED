@@ -53,11 +53,11 @@ public class mainUsuario {
                     System.out.println(producto);
 
                     TDAList<Producto> carrito = new ListLinked<>();
-                    System.out.print("Ingrese el nombre del producto a buscar: ");
+                    System.out.print("Ingrese el codigo del producto a buscar: ");
                     int codigo = sc.nextInt();
                     Producto busqueda = new Producto(codigo);
                     System.out.println(busqueda);
-                    System.out.print(carrito.search(busqueda));
+                    System.out.print(producto.search(busqueda));
 
                     break;
                 case 5:

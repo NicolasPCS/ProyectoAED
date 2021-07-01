@@ -1,4 +1,4 @@
-package src.org.sim.elineales.Listas;
+package org.sim.elineales.Listas;
 
 public class ListArray<T> implements TDAList<T>{
     private T[] list;
@@ -38,8 +38,8 @@ public class ListArray<T> implements TDAList<T>{
         return -1;
     }
 
-    @Override
-    public T search(String x) { return null; }
+    /* @Override
+    public T search(int x) { return null; } */
 
     @Override
     public void insertLast(T x) {
