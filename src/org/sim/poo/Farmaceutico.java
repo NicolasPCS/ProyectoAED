@@ -173,7 +173,7 @@ public class Farmaceutico extends Persona {
 
 	@Override
 	public String toString() {
-		return "Farmaceutico [codigo=" + codigo + ", Farmacia=" + Farmacia + ", horaEntrada=" + horaEntrada
+		return super.toString() + " Farmaceutico [codigo=" + codigo + ", Farmacia=" + Farmacia + ", horaEntrada=" + horaEntrada
 				+ ", horaSalida=" + horaSalida + "]";
 	}
 
