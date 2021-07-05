@@ -12,6 +12,12 @@ public class Farmaceutico extends Persona {
 	private int horaEntrada;
 	private int horaSalida;
 
+	public Farmaceutico(int codigo, String contra) {
+		this.codigo=codigo;
+		this.contra=contra;
+		
+				
+	}
 	public Farmaceutico(String nombre, String apellido, int edad, String correo,
 						String farmacia, String contra){
 		super(nombre, apellido, edad, correo);
@@ -21,6 +27,9 @@ public class Farmaceutico extends Persona {
 	}
 
 
+	public Farmaceutico() {
+		
+	}
 	public void IniciarSesion() {
 		String usuario;
 		String contrasena;
@@ -29,7 +38,7 @@ public class Farmaceutico extends Persona {
 
 		System.out.println("\nIngrese su Usuario: ");
 		usuario = enter.nextLine();
-		System.out.println("\nContrase�a: ");
+		System.out.println("\nContraseï¿½a: ");
 		contrasena = enter.nextLine();
 
 	}
@@ -69,7 +78,7 @@ public class Farmaceutico extends Persona {
 		double pre = enter.nextDouble();
 		pro.setPrecio(pre);
 
-		System.out.println("\n�Desea Guardar los datos ingresados?: Si = 0 y No = 1");
+		System.out.println("\nï¿½Desea Guardar los datos ingresados?: Si = 0 y No = 1");
 		int res = enter.nextInt();
 		if (res==0) {
 			System.out.println("\nSe guardaron correctamente los datos ingresados.");
@@ -149,6 +158,17 @@ public class Farmaceutico extends Persona {
 
 	public void setHoraSalida(int horaSalida) {
 		this.horaSalida = horaSalida;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Farmaceutico ) {
+			Farmaceutico f = (Farmaceutico) obj;
+			if(this.codigo==f.codigo && this.contra.equals(f.contra))return true;
+			return false;
+			
+		}
+		return false;
 	}
 
 	@Override
