@@ -31,7 +31,9 @@ public class Persona {
 	}
 
 
-	public void nombrePersona(String nombre) {		
+	public String getNombre() {
+		return this.nombre;
+	}
     public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -44,10 +46,36 @@ public class Persona {
 		return this.apellido;
 	}
 
-	public void dniPersona(String dniPersona) {		
-		Scanner entrada = new Scanner(System.in);
-		dniPersona = entrada.nextLine();		
-    public void setEstadoCivil(String estadoCivil) {
+	
+	
+    public int getDni() {
+		return dni;
+	}
+	public void setDni(int dni) {
+		this.dni = dni;
+	}
+	public int getEdad() {
+		return edad;
+	}
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public String getFechaNacimiento() {
+		return FechaNacimiento;
+	}
+	public void setFechaNacimiento(String fechaNacimiento) {
+		FechaNacimiento = fechaNacimiento;
+	}
+	public String getEstadoCivil() {
+		return estadoCivil;
+	}
+	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
 
@@ -58,5 +86,13 @@ public class Persona {
 	public String getCorreo() {
 		return this.correo;
 	}
+	@Override
+	public String toString() {
+		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", edad=" + edad
+				+ ", direccion=" + direccion + ", FechaNacimiento=" + FechaNacimiento + ", estadoCivil=" + estadoCivil
+				+ ", correo=" + correo + "]";
+	}
+	
+	
 
 }
