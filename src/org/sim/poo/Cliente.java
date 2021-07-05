@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Cliente extends Persona {
     public Producto[] carritoCompra;
 
-    public Cliente(Object nombre, Object dni) {
+    public Cliente(String nombre, int dni) {
         super(nombre, dni);
     }
 
