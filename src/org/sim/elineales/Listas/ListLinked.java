@@ -1,49 +1,49 @@
-package src.org.sim.elineales.Listas;
+package org.sim.elineales.Listas;
 
 public class ListLinked <T> implements TDAList<T> {
 	private Node <T> first;
 	private int count;
-	
+
 	public ListLinked() {
 		this.first = null;
 		this.count = 0;
 	}
-	
+
 	public boolean isEmptyList() {
-		return this.first == null;	
+		return this.first == null;
 	}
-	
+
 	public int length() {
-		return this.count;	
+		return this.count;
 	}
-	
+
 	public void destroyList() {
 		while(this.first != null)
 			this.first = this.first.getNext();
 		this.count = 0;
 	}
-	
+
 	public int search(T x) {
 		Node <T> aux = this.first;
 		for(int i = 0; aux != null; aux = aux.getNext(), i++) {
-			
+
 			if(aux.getData().equals(x)) {
 
 				return i;
 			}
 		}
-		return -1;			
+		return -1;
 	}
 
-	public T search(String nombre) {
+	/* public T search(int codigo) {
+	public T search(int codigo) {
 		Node <T> aux = this.first;
 		for(int i = 0; aux != null; aux = aux.getNext(), i++)
-
-			if(aux.getData().equals(nombre))
+			if(aux.getData().equals(codigo))
 				return aux.getData();
 		return null;
-	}
-	
+	} */
+
 	public void insertLast(T x) {
 		if(this.isEmptyList())
 			this.insertFirst(x);
@@ -59,7 +59,11 @@ public class ListLinked <T> implements TDAList<T> {
 		this.count++;
 	}
 
+<<<<<<< HEAD
 
+=======
+	@Override
+>>>>>>> fbeb86bb3fe6adf78d8661c74729d08888deb56d
 	public void remove(T x) {
 		int pos = this.search(x);
 		Node<T> head = this.first;
@@ -84,6 +88,7 @@ public class ListLinked <T> implements TDAList<T> {
 			System.out.println("Elemento no encontrado");
 		}
 	}
+<<<<<<< HEAD
 	
 	public String toString() {
 		String str = "";
@@ -96,6 +101,9 @@ public class ListLinked <T> implements TDAList<T> {
 	
 	
 	
+=======
+
+>>>>>>> fbeb86bb3fe6adf78d8661c74729d08888deb56d
 	//PreCondition: List is not empty
 	private Node <T> getLastNode(){
 		Node <T> aux = this.first;
@@ -103,7 +111,7 @@ public class ListLinked <T> implements TDAList<T> {
 			aux = aux.getNext();
 		return aux;
 	}
-	
+
 	public int ocurrencias(T x) {
 		Node <T> aux = this.first;
 		for(int i = 0; aux != null; aux = aux.getNext(), i++)
@@ -111,9 +119,12 @@ public class ListLinked <T> implements TDAList<T> {
 				return i;
 		return -1;
 	}
+<<<<<<< HEAD
 	
 	
 
+=======
+>>>>>>> fbeb86bb3fe6adf78d8661c74729d08888deb56d
 
 	public Node<T> getNodeAt(int index) {
 		Node<T> aux = this.first;
@@ -126,6 +137,18 @@ public class ListLinked <T> implements TDAList<T> {
 		}
 		return aux;
 	}
+<<<<<<< HEAD
+=======
+
+	public String toString() {
+		String str = "";
+		Node <T> aux = this.first;
+		for(int i = 0; aux != null; aux = aux.getNext(), i++)
+			str += "["+i+"] = " +aux.getData()+"\n";
+		return str;
+
+	}
+>>>>>>> fbeb86bb3fe6adf78d8661c74729d08888deb56d
 }
 
 

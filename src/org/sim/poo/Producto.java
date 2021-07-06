@@ -1,30 +1,30 @@
-package src.org.sim.poo;
+package org.sim.poo;
 
 import java.util.Date;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Producto {
-    private int codigo;
-    private String nombre;
-    private String tipo;
-    private String precauciones;
-    private double precio;
-    private String fechaVencimiento;
-    private int cantidad;
+	private int codigo;
+	private String nombre;
+	private String tipo;
+	private String precauciones;
+	private double precio;
+	private String fechaVencimiento;
+	private int cantidad;
 
-    public Producto() {}
-    public Producto(int codigo) {this.codigo = codigo;}
+	public Producto() {}
+	public Producto(int codigo) {this.codigo = codigo;}
 
-    public Producto(int codigo, String nombre, String tipo, String precauciones, double precio, String fechaVencimiento, int cantidad) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.precauciones = precauciones;
-        this.precio = precio;
-        this.fechaVencimiento = fechaVencimiento;
-        this.cantidad = cantidad;
-    }
+	public Producto(int codigo, String nombre, String tipo, String precauciones, double precio, String fechaVencimiento, int cantidad) {
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.tipo = tipo;
+		this.precauciones = precauciones;
+		this.precio = precio;
+		this.fechaVencimiento = fechaVencimiento;
+		this.cantidad = cantidad;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -84,15 +84,15 @@ public class Producto {
 		int cantidad = s.nextInt();
 
 		return new Producto(codigo, nombre, tipo, precauciones, precio, fechaVen, cantidad);
-    }
+	}
 
-    public void mostrarDatosProd(int idProd) {
+	public void mostrarDatosProd(int idProd) {
 
-    }
+	}
 
-    public void eliminarProd(int idProd) {
+	public void eliminarProd(int idProd) {
 
-    }
+	}
 
 	@Override
 	public String toString() {

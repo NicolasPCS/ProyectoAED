@@ -1,12 +1,12 @@
-package src.org.sim.poo;
+package org.sim.poo;
 
 import java.util.Arrays;
 
 public class Cliente extends Persona {
     public Producto[] carritoCompra;
 
-    public Cliente() {
-        super();
+    public Cliente(String nombre, int dni) {
+        super(nombre, dni);
     }
 
     public void agregarProductosCar(Producto prod) {
