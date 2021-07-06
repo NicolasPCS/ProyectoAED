@@ -1,4 +1,4 @@
-package org.sim.elineales.Listas;
+package src.org.sim.elineales.Listas;
 
 public class ListLinked <T> implements TDAList<T> {
 	private Node <T> first;
@@ -59,11 +59,8 @@ public class ListLinked <T> implements TDAList<T> {
 		this.count++;
 	}
 
-<<<<<<< HEAD
-
-=======
 	@Override
->>>>>>> fbeb86bb3fe6adf78d8661c74729d08888deb56d
+
 	public void remove(T x) {
 		int pos = this.search(x);
 		Node<T> head = this.first;
@@ -88,22 +85,6 @@ public class ListLinked <T> implements TDAList<T> {
 			System.out.println("Elemento no encontrado");
 		}
 	}
-<<<<<<< HEAD
-	
-	public String toString() {
-		String str = "";
-		Node <T> aux = this.first;
-		for(int i = 0; aux != null; aux = aux.getNext(), i++)
-			str += "["+i+"] = " +aux.getData()+"\n";
-		return str;	
-	}
-	
-	
-	
-	
-=======
-
->>>>>>> fbeb86bb3fe6adf78d8661c74729d08888deb56d
 	//PreCondition: List is not empty
 	private Node <T> getLastNode(){
 		Node <T> aux = this.first;
@@ -119,12 +100,6 @@ public class ListLinked <T> implements TDAList<T> {
 				return i;
 		return -1;
 	}
-<<<<<<< HEAD
-	
-	
-
-=======
->>>>>>> fbeb86bb3fe6adf78d8661c74729d08888deb56d
 
 	public Node<T> getNodeAt(int index) {
 		Node<T> aux = this.first;
@@ -137,8 +112,6 @@ public class ListLinked <T> implements TDAList<T> {
 		}
 		return aux;
 	}
-<<<<<<< HEAD
-=======
 
 	public String toString() {
 		String str = "";
@@ -146,9 +119,7 @@ public class ListLinked <T> implements TDAList<T> {
 		for(int i = 0; aux != null; aux = aux.getNext(), i++)
 			str += "["+i+"] = " +aux.getData()+"\n";
 		return str;
-
 	}
->>>>>>> fbeb86bb3fe6adf78d8661c74729d08888deb56d
 }
 
 
