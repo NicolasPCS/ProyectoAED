@@ -59,10 +59,7 @@ public class ListLinked <T> implements TDAList<T> {
 		this.count++;
 	}
 
-<<<<<<< HEAD
-=======
-	@Override
->>>>>>> 21255626845985a4bfeeba9bb0812b8cd62f1273
+
 	public void remove(T x) {
 		int pos = this.search(x);
 		Node<T> head = this.first;
@@ -87,7 +84,6 @@ public class ListLinked <T> implements TDAList<T> {
 			System.out.println("Elemento no encontrado");
 		}
 	}
-<<<<<<< HEAD
 	
 	public String toString() {
 		String str = "";
@@ -96,20 +92,6 @@ public class ListLinked <T> implements TDAList<T> {
 			str += "["+i+"] = " +aux.getData()+"\n";
 		return str;	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -131,7 +113,7 @@ public class ListLinked <T> implements TDAList<T> {
 	}
 	
 	
-=======
+
 
 	public Node<T> getNodeAt(int index) {
 		Node<T> aux = this.first;
@@ -144,14 +126,6 @@ public class ListLinked <T> implements TDAList<T> {
 		}
 		return aux;
 	}
-
-	public String toString() {
-		String str = "";
-		Node <T> aux = this.first;
-		for(int i = 0; aux != null; aux = aux.getNext(), i++)
-			str += "["+i+"] = " +aux.getData()+"\n";
-		return str;
-		
-	}
->>>>>>> 21255626845985a4bfeeba9bb0812b8cd62f1273
 }
+
+

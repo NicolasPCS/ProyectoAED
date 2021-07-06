@@ -3,25 +3,14 @@ import java.util.Scanner;
 
 public class Persona <T> {
 	
-<<<<<<< HEAD
 	private T nombre;
 	private T dni;
 	private T edad;
 	private T direccion;
 	private T FechaNacimiento;
 	private T estadoCivil;
-=======
-	private String nombre;
-	private String apellido;
-	private int dni;
-	private int edad;
-	private String direccion;
-	private String FechaNacimiento;
-	private String estadoCivil;
-	private String correo;
->>>>>>> 21255626845985a4bfeeba9bb0812b8cd62f1273
 	
-	public Persona(T nombre, T dni) {
+	public Persona(T nombre, T dni, T edad, T correo) {
 		super();
 		this.nombre = nombre;
 		this.dni = dni;
@@ -36,15 +25,8 @@ public class Persona <T> {
 		setFechaNacimiento(fechaNacimiento);
 		this.estadoCivil = estadoCivil;
 	}
-	
-	
-	public Persona(String nombre, String apellido, int edad, String correo) {
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.edad = edad;
-		this.correo = correo;
-	}
 
+	
 	@Override
 	public String toString() {
 		return "Persona [nombre=" + nombre + ", dni=" + dni + ", edad=" + edad + ", direccion=" + direccion
@@ -62,14 +44,6 @@ public class Persona <T> {
 
 	public void setNombre(T nombre) {
 		this.nombre = nombre;
-	}
-	
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	
-	public String getApellido() {
-		return this.apellido;
 	}
 	
 	public void dniPersona(String dniPersona) {		
@@ -122,12 +96,5 @@ public class Persona <T> {
 		FechaNacimiento = fechaNacimiento2;
 	}
 	
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-	
-	public String getCorreo() {
-		return this.correo;
-	}
 	
 }
