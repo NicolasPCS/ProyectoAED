@@ -22,5 +22,42 @@ public class mainFarmacia {
 				System.out.println("Error en la opcion ingresada, por favor vuelva a ingresar la opcion");
 				opcion1 = ingresar.nextInt();
 			}
-	
+			switch(opcion1) {
+			case 1:
+				posicion = sistema.search(Farmacia.BusquedaDatosFarm());
+				if(posicion == -1) {
+					System.out.println("Farmacia no encontrada...");
+				}
+				else {
+					while(opcion2 != 2){
+					System.out.println("INGRESO EXITOSO, BIENVENIDO A LA FARMACIA:"+sistema.getNodeAt(posicion).getData().getDirSede()
+							+"\nIngrese una de las opciones por favor\n\1.Ingresar farmaceutico\n\tCerrar Sesion");
+					opcion2 = ingresar.nextInt();
+					switch(opcion2) {
+					case 1:
+						sistema.getNodeAt(posicion).getData().agregarFarmaceutico();
+						break;
+					case 2:
+						System.out.println("Cerrando Sesion");
+						break;
+					}
+					}
+				}
+				break;
+			case 2:
+				if(sistema == null) {
+					sistema.insertFirst(Farmacia.ingresarDatosFarm());
+				}
+				else {
+					sistema.insertLast(Farmacia.ingresarDatosFarm());
+				}
+				break;
+			case 3:
+				System.out.println("Saliendo del Sistema");
+				opcion = "Si";
+			}
+			
+		}
+	}
 
+}
