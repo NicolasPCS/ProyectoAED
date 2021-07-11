@@ -1,98 +1,86 @@
 package org.sim.poo;
-
 import java.util.Date;
 import java.util.Scanner;
 
-public class Farmacia {
-	private int idFarmacia = 0;
-	private String dirSede;
-	private boolean disponible;
-	private Date horarioAtencion;
-	private String telefono;
+import org.sim.elineales.Listas.ListLinked;
+
+public class Farmacia implements Comparable<Farmacia>{
+    private int idFarmacia = 0;
+    private String dirSede;
+    private boolean disponible;
+    private String horarioAtencion;
+    private String telefono;
 	private String producto;
 	private Producto producto1;
+	public int getIdFarmacia() {
+		return idFarmacia;
+	}
 
+	public void setIdFarmacia(int idFarmacia) {
+		this.idFarmacia = idFarmacia;
+	}
 
-	public Farmacia() {}
+	public String getDirSede() {
+		return dirSede;
+	}
 
-	public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
-		this.idFarmacia += 1;
+	public void setDirSede(String dirSede) {
 		this.dirSede = dirSede;
-		this.disponible = false;
+	}
+
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+
+	public String getHorarioAtencion() {
+		return horarioAtencion;
+	}
+
+	public void setHorarioAtencion(String horarioAtencion) {
 		this.horarioAtencion = horarioAtencion;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
-	public void agregarFarmaceuticos() {
-		Scanner enter = new Scanner (System.in);
-		System.out.println("INGRESE CUANTOS FARMACEUTICOS VA A REGISTRAR");
-		int num = enter.nextInt();
-		enter.nextLine();
-
-		for (int i = 0; i < num; i++) {
-			System.out.println("-------------------------------------------");
-			System.out.print("Nombre: ");
-			String nombre = enter.nextLine();
-
-			System.out.print("Apellido: ");
-			String apellido  = enter.nextLine();
-
-			System.out.print("Edad: ");
-			int edad = enter.nextInt();
-			enter.nextLine();
-
-			System.out.print("Correo: ");
-			String correo = enter.nextLine();
-
-			System.out.print("Farmacia : ");
-			String farmacia = enter.nextLine();
-
-			System.out.print("Contraseña: ");
-			String contra = enter.nextLine();
-
-
-			Farmaceutico f = new Farmaceutico(nombre, apellido, edad, correo, farmacia, contra);
-			System.out.println("Farmaceutico registrado:\n" + f.getNombre() +
-					" - " + f.getApellido() + " - " + f.getEdad() + " - " + f.getCorreo() +
-					" - " + f.getFarmacia());
-		}
-
+	public String getProducto() {
+		return producto;
 	}
 
-	public void verHorario() {
-
-		int opc = 0;
-
-		Scanner in = new Scanner(System.in);
-
-		System.out.println("Escoje una opcion");
-		System.out.println("-------------------------");
-		System.out.println("1. Turno Mañana");
-		System.out.println("2. Turno Tarde");
-		System.out.println("3. Turno Noche");
-		System.out.println("4. Salir");
-
-		opc = in.nextInt();
-
-		switch (opc) {
-			case 1:
-				System.out.println("7:00 am a 12 am");
-				break;
-			case 2:
-				System.out.println("2:00 pm a 4:00 pm");
-				break;
-			case 3:
-				System.out.println("6:00 pm a 8:00 pm");
-				break;
-			case 4:
-				break;
-
-
-		}
-
-
-
+	public void setProducto(String producto) {
+		this.producto = producto;
 	}
+
+	public Producto getProducto1() {
+		return producto1;
+	}
+
+	public void setProducto1(Producto producto1) {
+		this.producto1 = producto1;
+	}
+
+	private ListLinked<Farmaceutico> farmaceuticos;
+	public Farmacia() {
+	}
+	public Farmacia(int idFarmacia) {
+		this.idFarmacia = idFarmacia;
+	}
+	public Farmacia(int idFarmacia,String dirSede, String horarioatencion, String telefono) {
+        this.idFarmacia = idFarmacia; 
+        this.dirSede = dirSede;
+        this.disponible = false;
+        this.horarioAtencion = horarioatencion;
+        this.telefono = telefono;
+    }
 
     /*public void listarProductos() {
     	
