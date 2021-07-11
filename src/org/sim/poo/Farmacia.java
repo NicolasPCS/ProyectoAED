@@ -180,7 +180,7 @@ public class Farmacia implements Comparable<Farmacia>{
     	
 
     }
-    /*public void listarProductos() {
+    public void listarProductos() {
     	
     	String Producto;
     	int n = 5;
@@ -201,14 +201,77 @@ public class Farmacia implements Comparable<Farmacia>{
 
     	Scanner entrada11 = new Scanner(System.in);
 		Producto = entrada11.nextLine();
-
 		entrada = new Scanner(System.in);
 
-
-
-		
     	
-    }*/
+    }
+    @SuppressWarnings("deprecation")
+	public static Farmacia ingresarDatosFarm() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("<=======\tNUEVA FARMACIA\t=======>");
+		System.out.println("\tId de la Farmacia");
+		int IdFarmacia = s.nextInt();
+		System.out.print("\tNombre de la sede: ");
+		String nombre = s.nextLine();
+		System.out.print("\tHorario de atencion: ");
+		String horarioatencion = s.next();
+		System.out.print("\tTelefono: ");
+		String telefono = s.nextLine();
+		return new Farmacia(IdFarmacia,nombre,horarioatencion,telefono);
+    }
+    public static Farmacia BusquedaDatosFarm() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("<=======\tFARMACIA EXISTENTE\t=======>");
+		System.out.println("\tId de la Farmacia");
+		int IdFarmacia = s.nextInt();
+		return new Farmacia(IdFarmacia);
+    }
+    @Override
+    public String toString() {
+        return "Farmacia{" +
+                "idFarmacia=" + idFarmacia +
+                ", dirSede='" + dirSede + '\'' +
+                ", disponible=" + disponible +
+                ", horarioAtencion=" + horarioAtencion +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
+	public boolean equals(Object o) {
+		if(o instanceof Farmacia) {
+			Farmacia a = (Farmacia) o;
+			return this.idFarmacia==a.idFarmacia;
+		}
+		else {
+			return false;
+		}
+	}
+	public boolean equals(Farmacia o) {
+		return this.idFarmacia == o.idFarmacia;
+	}
+	@Override
+	public int compareTo(Farmacia o) {
+		// TODO Auto-generated method stub
+		if(o instanceof Farmacia) {
+			Farmacia a = (Farmacia) o;
+			if(this.idFarmacia>a.idFarmacia) return 1;
+			if(this.idFarmacia<a.idFarmacia) return -1;
+			else {
+				return 0;
+			}
+		}
+		else {
+			return 0;
+		}
+	}
+
+	public ListLinked<Farmaceutico> getFarmaceuticos() {
+		return farmaceuticos;
+	}
+
+	public void setFarmaceuticos(ListLinked<Farmaceutico> farmaceuticos) {
+		this.farmaceuticos = farmaceuticos;
+	}
+}
 
 	@Override
 	public String toString() {
