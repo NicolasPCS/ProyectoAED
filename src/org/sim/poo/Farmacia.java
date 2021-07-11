@@ -81,7 +81,70 @@ public class Farmacia implements Comparable<Farmacia>{
         this.horarioAtencion = horarioatencion;
         this.telefono = telefono;
     }
-
+@SuppressWarnings({ "resource", "unused" })
+	public void agregarFarmaceutico() {
+		String opcion;
+		Scanner entrada = new Scanner(System.in);
+		opcion = entrada.nextLine();
+		while (!opcion.equals("No")) {
+		if(this.farmaceuticos ==null) {
+			Scanner enter = new Scanner (System.in);
+			int num = enter.nextInt();
+			enter.nextLine();
+			System.out.println("-------------------------------------------");
+			System.out.print("Nombre: ");
+			String nombre = enter.nextLine();
+				
+			System.out.print("Apellido: ");
+			String apellido  = enter.nextLine();
+				
+			System.out.print("Edad: ");
+			int edad = enter.nextInt();
+			enter.nextLine();
+				
+			System.out.print("Correo: ");
+			String correo = enter.nextLine();
+				
+			/*System.out.print("Farmacia : ");
+			String farmacia = enter.nextLine();*/
+				
+			System.out.print("Contraseña: ");
+			String contra = enter.nextLine();
+			System.out.println("Farmaceutico registrado:\n" + nombre + 
+						" - " + apellido + " - " + edad + " - " + correo);
+			this.farmaceuticos.insertFirst(new Farmaceutico(nombre, apellido, edad, correo,Farmacia.this,contra));
+		}
+		else {
+			Scanner enter = new Scanner (System.in);
+			int num = enter.nextInt();
+			enter.nextLine();
+			System.out.println("-------------------------------------------");
+			System.out.print("Nombre: ");
+			String nombre = enter.nextLine();
+				
+			System.out.print("Apellido: ");
+			String apellido  = enter.nextLine();
+				
+			System.out.print("Edad: ");
+			int edad = enter.nextInt();
+			enter.nextLine();
+				
+			System.out.print("Correo: ");
+			String correo = enter.nextLine();
+				
+			/*System.out.print("Farmacia : ");
+			String farmacia = enter.nextLine();*/
+				
+			System.out.print("Contraseña: ");
+			String contra = enter.nextLine();
+			System.out.println("Farmaceutico registrado:\n" + nombre + 
+						" - " + apellido + " - " + edad + " - " + correo);
+			this.farmaceuticos.insertLast(new Farmaceutico(nombre, apellido, edad, correo,Farmacia.this, contra));	
+		}
+		System.out.println("Desea seguir con el registro de farmaceuticos (Si/No)");
+		opcion = entrada.nextLine();
+		}
+	}
     /*public void listarProductos() {
     	
     	String Producto;
