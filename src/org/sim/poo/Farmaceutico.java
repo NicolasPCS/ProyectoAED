@@ -32,6 +32,11 @@ public class Farmaceutico extends Persona implements Comparable<Farmaceutico>{
 		super(nombre, apellido, edad, correo);
 		this.password = contra;
 	}
+	public Farmaceutico(String codigo,String nombre, String apellido, int edad, String correo,String contra){
+		super(nombre, apellido, edad, correo);
+		this.codigo = codigo;
+		this.password = contra;
+	}
 	public Farmaceutico(String codigo,String nombre, String apellido, int edad,String correo) {
 		super(nombre,apellido,edad,correo);
 		this.codigo = codigo;
@@ -39,28 +44,38 @@ public class Farmaceutico extends Persona implements Comparable<Farmaceutico>{
 	public Farmaceutico() {
 		super();
 	}
+	public Farmaceutico(String codigo) {
+		this.codigo = codigo;
+	}
 	
-	
+	public Farmaceutico(String codigo2, String nombre, String apellido, int edad, String correo,
+			Farmacia farmacia, String contra) {
+		// TODO Auto-generated constructor stub
+		super(nombre,apellido,edad,correo);
+		this.codigo = codigo2;
+		this.password = contra;
+	}
+
 	@SuppressWarnings("resource")
-	public void IniciarSesion() {
+	public static Farmaceutico IniciarSesion() {
 		String usuario;
-		String password;
+		//String password;
 		
 		Scanner enter = new Scanner(System.in);
-		
-		System.out.println("\nIngrese su Codigo de farmaceutico: ");
+		System.out.println("<======\tINICIANDO SESION FARMACEUTICO\t======>");
+		System.out.println("Ingrese su Codigo de farmaceutico: ");
 		usuario = enter.nextLine();
-		while(!this.codigo.equalsIgnoreCase(usuario)) {
+		/*while(!f.codigo.equalsIgnoreCase(usuario)) {
 			System.out.println("Codigo no encontrado, ingrese de nuevo");
 			usuario = enter.nextLine();
-		}
-		System.out.println("\nContraseña: ");
-		password = enter.nextLine();
-		while(!this.password.equals(password)) {
+		}*/
+		/*System.out.println("Contraseña: ");
+		password = enter.nextLine();*/
+		/*while(!f.password.equals(password)) {
 			System.out.println("contraseña incorrecta, ingresela de nuevo");
 			password = enter.nextLine();
-		}
-			
+		}*/
+		return new Farmaceutico(usuario);
 	}
 	
 	
@@ -108,20 +123,23 @@ public class Farmaceutico extends Persona implements Comparable<Farmaceutico>{
 			pro.insertLast(Farmaceutico.RegistrarMedicamento());
 		}
 	}
+	@SuppressWarnings("resource")
 	public static Farmaceutico ingresarDatosFarmaceutico() {
 		Scanner s = new Scanner(System.in);
-		System.out.print("\tCodigo del Farmaceutico: ");
-		String codigo = s.nextLine();
-		System.out.print("\tNombre del Farmaceutico: ");
-		String nombre = s.nextLine();
-		System.out.print("\tApellido del farmaceutico: ");
-		String apellido = s.nextLine();
-		System.out.print("\tEdad del farmaceutico: ");
+		System.out.println("<=======\tNUEVO FARMACEUTICO\t=======>");
+		System.out.println("\tCodigo del Farmaceutico: ");
+		String codigo = s.next();
+		System.out.println("\tNombre del Farmaceutico: ");
+		String nombre = s.next();
+		System.out.println("\tApellido del farmaceutico: ");
+		String apellido = s.next();
+		System.out.println("\tEdad del farmaceutico: ");
 		int edad = s.nextInt();
-		System.out.print("\tCorreo del farmaceutico: ");
-		String correo = s.nextLine();
-
-		return new Farmaceutico(codigo, nombre, apellido, edad, correo);
+		System.out.println("\tCorreo del farmaceutico: ");
+		String correo = s.next();
+		System.out.println("\tIngrese su contraseña: ");
+		String pass = s.next();
+		return new Farmaceutico(codigo, nombre, apellido, edad, correo,pass);
     }
 	public void VerMedicamentos(Producto pro) {
 		
@@ -158,6 +176,7 @@ public class Farmaceutico extends Persona implements Comparable<Farmaceutico>{
 		
 	}
 	
+	@SuppressWarnings("resource")
 	public void CrearCuenta() {
 		String usuario;
 		String password;
@@ -172,13 +191,14 @@ public class Farmaceutico extends Persona implements Comparable<Farmaceutico>{
 		password = enter.nextLine();
 		this.setPassword(password);
 		System.out.println("Confirme su contraseña");
+		password = enter.nextLine();
 		while(!this.password.equals(password)) {
 			System.out.println("La contraseña no coincide vuelva a ingresarla");
 			password = enter.nextLine();
 		}
 		System.out.println("Desea Guardar los datos ingresados?(Si/No)");
 		opcion = enter.nextLine();
-		}while(opcion.equalsIgnoreCase("Si"));
+		}while(!opcion.equalsIgnoreCase("Si"));
 	}
 
 	public String getPassword() {
@@ -220,7 +240,26 @@ public class Farmaceutico extends Persona implements Comparable<Farmaceutico>{
 	public void setHoraSalida(int horaSalida) {
 		this.horaSalida = horaSalida;
 	}
-
+	@Override
+	public boolean equals(Object o) {
+		if(o instanceof Farmaceutico) {
+			Farmaceutico a = (Farmaceutico) o;
+			return this.codigo.equals(a.codigo);
+		}
+		else {
+			return false;
+		}
+	}
+	public boolean equals(Farmaceutico o) {
+		if(this.codigo.compareTo(o.codigo)==0) { 
+			return true;
+		}
+		return false;
+	}
+	public int compareTo(Farmaceutico o) {
+		// TODO Auto-generated method stub
+		return this.codigo.compareTo(o.getCodigo());
+	}
 	@Override
 	public String toString() {
 		return "Farmaceutico [codigo=" + codigo + ", Farmacia=" + Farmacia + ", horaEntrada=" + horaEntrada
@@ -231,15 +270,7 @@ public class Farmaceutico extends Persona implements Comparable<Farmaceutico>{
 		if(this.Farmacia.equals(o.Farmacia)&&this.codigo.equals(o.codigo)) return true;
 		return false;
 	}*/
-	public boolean equals(Farmaceutico o) {
-		if(this.codigo.equals(o.codigo)) return true;
-		return false;
-	}
-	@Override
-	public int compareTo(Farmaceutico o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 	
 	
 	

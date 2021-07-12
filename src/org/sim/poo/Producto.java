@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Producto {
+public class Producto implements Comparable<Producto>{
     private String codigo;
     private String nombre;
     private String tipo;
@@ -134,6 +134,12 @@ public class Producto {
 
 	public void setFechaVencimiento(String fechaVencimiento) {
 		this.fechaVencimiento = fechaVencimiento;
+	}
+
+	@Override
+	public int compareTo(Producto o) {
+		// TODO Auto-generated method stub
+		return this.codigo.compareTo(o.codigo);
 	}
 
 
