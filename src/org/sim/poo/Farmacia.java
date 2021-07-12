@@ -1,65 +1,152 @@
 package org.sim.poo;
-
 import java.util.Date;
 import java.util.Scanner;
 
-public class Farmacia {
+import org.sim.elineales.Listas.ListLinked;
+
+public class Farmacia implements Comparable<Farmacia>{
     private int idFarmacia = 0;
     private String dirSede;
     private boolean disponible;
-    private Date horarioAtencion;
+    private String horarioAtencion;
     private String telefono;
 	private String producto;
 	private Producto producto1;
-	
-	
-	public Farmacia() {}
+	public int getIdFarmacia() {
+		return idFarmacia;
+	}
 
-	public Farmacia(String dirSede, Date horarioAtencion, String telefono) {
-        this.idFarmacia += 1;
+	public void setIdFarmacia(int idFarmacia) {
+		this.idFarmacia = idFarmacia;
+	}
+
+	public String getDirSede() {
+		return dirSede;
+	}
+
+	public void setDirSede(String dirSede) {
+		this.dirSede = dirSede;
+	}
+
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+
+	public String getHorarioAtencion() {
+		return horarioAtencion;
+	}
+
+	public void setHorarioAtencion(String horarioAtencion) {
+		this.horarioAtencion = horarioAtencion;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getProducto() {
+		return producto;
+	}
+
+	public void setProducto(String producto) {
+		this.producto = producto;
+	}
+
+	public Producto getProducto1() {
+		return producto1;
+	}
+
+	public void setProducto1(Producto producto1) {
+		this.producto1 = producto1;
+	}
+
+	private ListLinked<Farmaceutico> farmaceuticos;
+	public Farmacia() {
+	}
+	public Farmacia(int idFarmacia) {
+		this.idFarmacia = idFarmacia;
+	}
+	public Farmacia(int idFarmacia,String dirSede, String horarioatencion, String telefono) {
+        this.idFarmacia = idFarmacia; 
         this.dirSede = dirSede;
         this.disponible = false;
-        this.horarioAtencion = horarioAtencion;
+        this.horarioAtencion = horarioatencion;
         this.telefono = telefono;
     }
-
-	public void agregarFarmaceuticos() {
-		Scanner enter = new Scanner (System.in);
-		System.out.println("INGRESE CUANTOS FARMACEUTICOS VA A REGISTRAR");
-		int num = enter.nextInt();
-		enter.nextLine();
-		
-		for (int i = 0; i < num; i++) {
+	@SuppressWarnings({ "resource", "unused" })
+	public void agregarFarmaceutico() {
+		String opcion;
+		Scanner entrada = new Scanner(System.in);
+		opcion = entrada.nextLine();
+		while (!opcion.equals("No")) {
+		if(this.farmaceuticos ==null) {
+			Scanner enter = new Scanner (System.in);
+			int num = enter.nextInt();
+			enter.nextLine();
 			System.out.println("-------------------------------------------");
 			System.out.print("Nombre: ");
 			String nombre = enter.nextLine();
-			
+				
 			System.out.print("Apellido: ");
 			String apellido  = enter.nextLine();
-			
+				
 			System.out.print("Edad: ");
 			int edad = enter.nextInt();
 			enter.nextLine();
-			
+				
 			System.out.print("Correo: ");
 			String correo = enter.nextLine();
-			
-			System.out.print("Farmacia : ");
-			String farmacia = enter.nextLine();
-			
+				
+			/*System.out.print("Farmacia : ");
+			String farmacia = enter.nextLine();*/
+				
 			System.out.print("Contraseña: ");
 			String contra = enter.nextLine();
-			
-
-			Farmaceutico f = new Farmaceutico(nombre, apellido, edad, correo, farmacia, contra);
-			System.out.println("Farmaceutico registrado:\n" + f.getNombre() + 
-					" - " + f.getApellido() + " - " + f.getEdad() + " - " + f.getCorreo() + 
-					" - " + f.getFarmacia());
+			System.out.println("Farmaceutico registrado:\n" + nombre + 
+						" - " + apellido + " - " + edad + " - " + correo);
+			this.farmaceuticos.insertFirst(new Farmaceutico(nombre, apellido, edad, correo,Farmacia.this,contra));
 		}
-		
+		else {
+			Scanner enter = new Scanner (System.in);
+			int num = enter.nextInt();
+			enter.nextLine();
+			System.out.println("-------------------------------------------");
+			System.out.print("Nombre: ");
+			String nombre = enter.nextLine();
+				
+			System.out.print("Apellido: ");
+			String apellido  = enter.nextLine();
+				
+			System.out.print("Edad: ");
+			int edad = enter.nextInt();
+			enter.nextLine();
+				
+			System.out.print("Correo: ");
+			String correo = enter.nextLine();
+				
+			/*System.out.print("Farmacia : ");
+			String farmacia = enter.nextLine();*/
+				
+			System.out.print("Contraseña: ");
+			String contra = enter.nextLine();
+			System.out.println("Farmaceutico registrado:\n" + nombre + 
+						" - " + apellido + " - " + edad + " - " + correo);
+			this.farmaceuticos.insertLast(new Farmaceutico(nombre, apellido, edad, correo,Farmacia.this, contra));	
+		}
+		System.out.println("Desea seguir con el registro de farmaceuticos (Si/No)");
+		opcion = entrada.nextLine();
+		}
 	}
-	
-    public void verHorario() {
+    @SuppressWarnings("resource")
+	public void verHorario() {
     	
     	int opc = 0;
     	
@@ -115,15 +202,31 @@ public class Farmacia {
 
     	Scanner entrada11 = new Scanner(System.in);
 		Producto = entrada11.nextLine();
-
 		entrada = new Scanner(System.in);
 
-
-
-		
     	
     }
-
+    @SuppressWarnings("deprecation")
+	public static Farmacia ingresarDatosFarm() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("<=======\tNUEVA FARMACIA\t=======>");
+		System.out.println("\tId de la Farmacia");
+		int IdFarmacia = s.nextInt();
+		System.out.print("\tNombre de la sede: ");
+		String nombre = s.nextLine();
+		System.out.print("\tHorario de atencion: ");
+		String horarioatencion = s.next();
+		System.out.print("\tTelefono: ");
+		String telefono = s.nextLine();
+		return new Farmacia(IdFarmacia,nombre,horarioatencion,telefono);
+    }
+    public static Farmacia BusquedaDatosFarm() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("<=======\tFARMACIA EXISTENTE\t=======>");
+		System.out.println("\tId de la Farmacia");
+		int IdFarmacia = s.nextInt();
+		return new Farmacia(IdFarmacia);
+    }
     @Override
     public String toString() {
         return "Farmacia{" +
@@ -134,4 +237,39 @@ public class Farmacia {
                 ", telefono='" + telefono + '\'' +
                 '}';
     }
+	public boolean equals(Object o) {
+		if(o instanceof Farmacia) {
+			Farmacia a = (Farmacia) o;
+			return this.idFarmacia==a.idFarmacia;
+		}
+		else {
+			return false;
+		}
+	}
+	public boolean equals(Farmacia o) {
+		return this.idFarmacia == o.idFarmacia;
+	}
+	@Override
+	public int compareTo(Farmacia o) {
+		// TODO Auto-generated method stub
+		if(o instanceof Farmacia) {
+			Farmacia a = (Farmacia) o;
+			if(this.idFarmacia>a.idFarmacia) return 1;
+			if(this.idFarmacia<a.idFarmacia) return -1;
+			else {
+				return 0;
+			}
+		}
+		else {
+			return 0;
+		}
+	}
+
+	public ListLinked<Farmaceutico> getFarmaceuticos() {
+		return farmaceuticos;
+	}
+
+	public void setFarmaceuticos(ListLinked<Farmaceutico> farmaceuticos) {
+		this.farmaceuticos = farmaceuticos;
+	}
 }
