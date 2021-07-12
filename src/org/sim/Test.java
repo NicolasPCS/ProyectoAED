@@ -11,7 +11,6 @@ public class Test {
         b.toString();
         */
         Farmacia farmacia = new Farmacia();
-        farmacia.agregarFarmaceuticos();
         
     }
 }

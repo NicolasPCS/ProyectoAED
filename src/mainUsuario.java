@@ -12,12 +12,12 @@ public class mainUsuario {
         } catch (Exception e) {}
         try {
             System.out.println("Como usuario usted podra realizar lo siguiente:");
-            System.out.println("""
-                    \t1. Crear una cuenta
-                    \t2. Ver medicamentos
-                    \t3. Ver productos pro farmacia
-                    \t4. Generar mi carrito de compras
-                    \t5. Salir""");
+            System.out.println(
+                    "\t1. Crear una cuenta"+
+                    "\t2. Ver medicamentos"+
+                    "\t3. Ver productos pro farmacia"+
+                    "\t4. Generar mi carrito de compras"+
+                    "\t5. Salir");
 
             int opcion = 0;
             System.out.print("\nA continuacion seleccione una opcion (1/2/3/4/5): ");
@@ -36,11 +36,11 @@ public class mainUsuario {
                 case 3:
                 	System.out.print("cls");
                     System.out.println("Seleccione las farmacias de nuestro sistema");
-                    System.out.println("""
-                            \t1. Inkafarma
-                            \t2. Mifarma
-                            \t3. Fasa
-                            \t4. Salir""");
+                    System.out.println(
+                            "\t1. Inkafarma"+
+                            "\t2. Mifarma"+
+                            "\t3. Fasa"+
+                            "\t4. Salir");
                     int opc = 0;
                     System.out.print("\nSeleccione la farmacia que guste (1/2/3/4/5): ");
                     Scanner es = new Scanner(System.in);
@@ -82,29 +82,29 @@ public class mainUsuario {
         case 1:
             System.out.println("Bienvenido a Inkafarma :)");
             System.out.println("Productos exclusivos para ti:");
-            System.out.println("""
-                    \t* Jarabes
-                    \t* Pastillas
-                    \t* Pañales
-                    \t* Vitaminas""");
+            System.out.println(
+            		"\t* Jarabes"+
+            		"\t* Pastillas"+
+            		"\t* Pañales"+
+            		"\t* Vitaminas");
             break;
         case 2:
             System.out.println("Bienvenido a Mifarma :)");
             System.out.println("Productos exclusivos para ti:");
-            System.out.println("""
-                    \t* Medicamentos con receta
-                    \t* Dispositivos
-                    \t* Curitas
-                    \t* Alcohol""");
+            System.out.println(
+                    "\t* Medicamentos con receta"+
+                    "\t* Dispositivos"+
+                    "\t* Curitas"+
+                    "\t* Alcohol");
             break;
         case 3:
             System.out.println("Bienvenido a Mifarma :)");
             System.out.println("Productos exclusivos para ti:");
-            System.out.println("""
-                    \t* Medicamentos con receta
-                    \t* Dispositivos
-                    \t* Curitas
-                    \t* Alcohol""");
+            System.out.println(
+            		"\t* Medicamentos con receta"+
+            		"\t* Dispositivos"+
+            		"\t* Curitas"+
+            		"\t* Alcohol");
             break;
         case 4:
         	 System.out.println("Salir");

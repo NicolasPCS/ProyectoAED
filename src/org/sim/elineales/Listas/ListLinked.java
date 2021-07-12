@@ -50,7 +50,7 @@ public class ListLinked <T> implements TDAList<T> {
 	}
 	
 	//PreCondition: List is not empty
-	private Node <T> getLastNode(){
+	public Node <T> getLastNode(){
 		Node <T> aux = this.first;
 		while(aux.getNext() != null)
 			aux = aux.getNext();

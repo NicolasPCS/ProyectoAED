@@ -3,7 +3,11 @@ import java.util.Date;
 import java.util.Scanner;
 
 import org.sim.elineales.Listas.ListLinked;
+<<<<<<< HEAD
 import org.sim.hashcode.HashC;
+=======
+
+>>>>>>> origin
 import java.math.*;
 public class Farmacia implements Comparable<Farmacia>{
     private int idFarmacia = 0;
@@ -12,13 +16,17 @@ public class Farmacia implements Comparable<Farmacia>{
     private String horarioAtencion;
     private String telefono;
 	private String producto;
+<<<<<<< HEAD
 	private static HashC<Producto> producto2;
+=======
+>>>>>>> origin
 	private ListLinked<Producto> producto1;
 	private ListLinked<Farmaceutico> farmaceuticos = new ListLinked<Farmaceutico>();
 	public int getIdFarmacia() {
 		return idFarmacia;
 	}
 
+<<<<<<< HEAD
 	public HashC<Producto> getProducto2() {
 		return producto2;
 	}
@@ -27,6 +35,8 @@ public class Farmacia implements Comparable<Farmacia>{
 		this.producto2 = producto2;
 	}
 
+=======
+>>>>>>> origin
 	public void setIdFarmacia(int idFarmacia) {
 		this.idFarmacia = idFarmacia;
 	}
@@ -74,11 +84,19 @@ public class Farmacia implements Comparable<Farmacia>{
 	public ListLinked<Producto> getProducto1() {
 		return producto1;
 	}
+<<<<<<< HEAD
 
 	public void setProducto1(ListLinked<Producto> producto1) {
 		this.producto1 = producto1;
 	}
 
+=======
+
+	public void setProducto1(ListLinked<Producto> producto1) {
+		this.producto1 = producto1;
+	}
+
+>>>>>>> origin
 	public Farmacia() {
 	}
 	public Farmacia(int idFarmacia) {
@@ -123,6 +141,7 @@ public class Farmacia implements Comparable<Farmacia>{
 			Farmaceutico f = new Farmaceutico(codigo,nombre, apellido, edad, correo,Farmacia.this,contra);
 			this.farmaceuticos.insertFirst(f);
 			
+<<<<<<< HEAD
 		}
 		else {
 			System.out.println("<=======\tNuevo Farmaceutico\t=======>");
@@ -169,6 +188,41 @@ public class Farmacia implements Comparable<Farmacia>{
 		}
 		System.out.println(producto2);
 	}
+=======
+		}
+		else {
+			System.out.println("<=======\tNuevo Farmaceutico\t=======>");
+			System.out.println("\tCodigo: ");
+			String codigo = enter.next();
+			System.out.println("\tNombre: ");
+			String nombre = enter.next();
+				
+			System.out.println("\tApellido: ");
+			String apellido  = enter.next();
+				
+			System.out.println("\tEdad: ");
+			int edad = enter.nextInt();
+				
+			System.out.println("\tCorreo: ");
+			String correo = enter.next();
+				
+			/*System.out.print("Farmacia : ");
+			String farmacia = enter.nextLine();*/
+				
+			System.out.println("\tContraseña: ");
+			String contra = enter.next();
+			System.out.println("Farmaceutico registrado:\n" + codigo+ " - " + nombre + 
+						" - " + apellido + " - " + edad + " - " + correo);
+			Farmaceutico f = new Farmaceutico(nombre, apellido, edad, correo,Farmacia.this,contra);
+			this.farmaceuticos.insertLast(f);
+		}
+		System.out.println("Desea seguir con el registro de farmaceuticos (Si/No)");
+		opcion = enter.next();
+		}
+		System.out.println("Saliendo del ingreso de farmaceuticos");
+	}
+	
+>>>>>>> origin
     @SuppressWarnings("resource")
 	public void verHorario() {
     	
