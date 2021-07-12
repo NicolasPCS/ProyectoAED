@@ -43,6 +43,8 @@ public class mainFarmacaeutico {
 			    	case 2:
 			    		System.out.println("Lista de Productos: \n"+pro);
 			    		break;
+			    	case 3:
+
 			    	case 4:
 			    		System.out.println("Usted ha cerrado sesion");
 			    		break;
