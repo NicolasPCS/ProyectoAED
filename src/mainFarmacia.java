@@ -61,6 +61,7 @@ public class mainFarmacia {
 				System.out.println("Saliendo del Sistema");
 				opcion = "Si";
 			}
+		}
 	}
 
 }
