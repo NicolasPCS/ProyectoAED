@@ -25,6 +25,11 @@ public class Producto implements Comparable<Producto>{
         this.fechaVencimiento = fechaVencimiento;
         this.cantidad = cantidad;
     }
+    public Producto(String nombre, int cantidad, double precio) {
+    	this.nombre = nombre;
+    	this.cantidad = cantidad;
+    	this.precio = precio;
+    }
 
 	public String getNombre() {
 		return nombre;
@@ -66,7 +71,7 @@ public class Producto implements Comparable<Producto>{
 		this.cantidad = cantidad;
 	}
 
-	public Producto ingresarDatosProd() {
+	public static Producto ingresarDatosProd() {
 		Scanner s = new Scanner(System.in);
 		System.out.print("\tCodigo del producto: ");
 		String codigo = s.nextLine();
@@ -85,13 +90,12 @@ public class Producto implements Comparable<Producto>{
 
 		return new Producto(codigo, nombre, tipo, precauciones, precio, fechaVen, cantidad);
     }
-
     public void mostrarDatosProd(int idProd) {
-
+    		
     }
 
     public void eliminarProd(int idProd) {
-
+    	
     }
 
 	@Override
@@ -144,3 +148,4 @@ public class Producto implements Comparable<Producto>{
 
 
 }
+
