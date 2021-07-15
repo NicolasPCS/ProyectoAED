@@ -32,3 +32,14 @@ public class Stock {
     	else
     		return "Este tipo de stock no existe";
     }
+	public Farmacia getFarmacia() {
+		return farmacia;
+	}
+
+	public void setFarmacia(Farmacia farmacia) {
+		this.farmacia = farmacia;
+	}
+	public String toString() {
+		return "<Stock de la Farmacia>: "+this.farmacia.getDirSede()+": [Codigo: "+ this.producto.getCodigo() + " || Nombre: " + this.producto.getNombre() + " || Cantidad: " + this.producto.getCantidad()+" || TipodeStock: "+this.getTipoStock() + "]";
+	}
+}
