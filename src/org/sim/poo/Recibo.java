@@ -2,9 +2,10 @@ package org.sim.poo;
 
 import java.util.Date;
 
+import org.sim.elineales.Stacks.ExceptionIsEmpty;
 import org.sim.elineales.Stacks.LinkedStack;
 
-public class Recibo {
+public class Recibo {//genera recibos en el que su id se aumenta de manera secuencial
     private int numRecibo = 0;
     public static int contadorRecibos=0;
     private Cliente cliente;
@@ -17,16 +18,23 @@ public class Recibo {
         this.setFechaEmision(new Date());
         
     }
-    public Recibo() {
+    public Recibo() {//aumenta el id de recibo de manera incremental en 1
     	this.numRecibo = contadorRecibos+1;
     	contadorRecibos++;
     }
-    public static void generarRecibo(Cliente cliente,LinkedStack<Producto> productos) {
-    	
-    }
-
-    public static void imprimirRecibo() {
-
+    public static void generarRecibo(Cliente cliente,LinkedStack<Producto> productos) throws ExceptionIsEmpty {//genera recibo
+    	LinkedStack<Producto> aux = productos;
+    	System.out.println("<=======\tGenerando recibo\t=======> N°"+new Recibo().getNumRecibo());
+    	System.out.println("Cliente: "+cliente.getNombre()+" "+cliente.getApellido());
+    	System.out.println(cliente.getCarritoCompra());
+    	double sum = 0;
+    	while(!productos.isEmpty())
+    	{
+    		Producto o = new Producto();
+    		o = productos.pop();
+    		sum += o.getPrecio()*o.getCantidad();
+    	}
+    	System.out.println("El total es: s/"+sum);
     }
 	public int getNumRecibo() {
 		return numRecibo;
