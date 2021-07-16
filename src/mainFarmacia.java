@@ -31,13 +31,21 @@ public class mainFarmacia {
 				else {
 					while(opcion2 != 2){
 					System.out.println("INGRESO EXITOSO, BIENVENIDO A LA FARMACIA:"+sistema.getNodeAt(posicion).getData().getDirSede()
-							+"\nIngrese una de las opciones por favor\n\1.Ingresar farmaceutico\n\tCerrar Sesion");
+							+"\nIngrese una de las opciones por favor\n\t1. Ingresar farmaceutico\n\t2. VerFarmaceuticos\n\t3. Ingresar Stock"
+							+ "\n\t4. VerReporteStock \n\t5. Cerrar Sesion");
 					opcion2 = ingresar.nextInt();
 					switch(opcion2) {
 					case 1:
 						sistema.getNodeAt(posicion).getData().agregarFarmaceutico();
 						break;
 					case 2:
+						System.out.println(sistema.getNodeAt(posicion).getData().getFarmaceuticos());
+						break;
+					case 3:
+						sistema.getNodeAt(posicion).getData().ingresarstocks();
+					case 4:
+						Farmacia.listarStock(sistema.getNodeAt(posicion).getData().getStock());
+					case 5:
 						System.out.println("Cerrando Sesion");
 						break;
 					}
