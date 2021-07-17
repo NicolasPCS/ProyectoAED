@@ -1,0 +1,11 @@
+*.idea/
+<<<<<<< HEAD
+/bin/
+=======
+src/.classpath
+src/.project
+<<<<<<< HEAD
+/bin/
+=======
+>>>>>>> eef137750acfecd787a4869d7f285983ce147572
+>>>>>>> 08583a2fa8aeb6231393d8d5dac43e49523f85e0

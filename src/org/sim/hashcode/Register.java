@@ -9,6 +9,7 @@ public class Register<E> implements Comparable <Register<E>> {
 	public int compareTo(Register<E> r) {
 		return this.key - r.key;
 	}
+
 	@SuppressWarnings("unchecked")
 	public boolean equals(Object o) {
 		if(o instanceof Register) {
@@ -22,6 +23,6 @@ public class Register<E> implements Comparable <Register<E>> {
 		return this.key;
 	}
 	public String toString() {
-		return this.key+":"+this.value.toString();
+		return this.key+": "+this.value.toString();
 	}
 }
